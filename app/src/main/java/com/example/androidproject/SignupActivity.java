@@ -1,8 +1,11 @@
 package com.example.androidproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -31,6 +34,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class SignupActivity extends AppCompatActivity {
+    private View mainLayout;
     private EditText txtEmail, txtPassword, txtRePassword;
     private CheckBox cbAgree;
     private Button btnSignup;
@@ -39,7 +43,6 @@ public class SignupActivity extends AppCompatActivity {
     private List<String> emailList = new ArrayList<>();
     private final List<Integer> idList = new ArrayList<>();
     private final DAOSignup daoSignup = new DAOSignup();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +50,16 @@ public class SignupActivity extends AppCompatActivity {
 
         mappingComponent();
 
+        setMainLayout();
+
         getAllData();
 
         btnSignup.setOnClickListener(v -> signUp());
     }
 
     private void mappingComponent() {
+        mainLayout = findViewById(R.id.mainLayout);
+
         txtEmail = findViewById(R.id.editTextEmail);
         txtPassword = findViewById(R.id.editTextPassword);
         txtRePassword = findViewById(R.id.editTextRePassword);
@@ -62,6 +69,18 @@ public class SignupActivity extends AppCompatActivity {
         btnSignup = findViewById(R.id.buttonSignup);
 
         mContext = this;
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void setMainLayout() {
+        mainLayout.setOnTouchListener((v, event) -> {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            if (getCurrentFocus() != null) {
+                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                getCurrentFocus().clearFocus();
+            }
+            return false;
+        });
     }
 
     private void getAllData() {

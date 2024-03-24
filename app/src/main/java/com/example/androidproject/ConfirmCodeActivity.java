@@ -1,8 +1,11 @@
 package com.example.androidproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConfirmCodeActivity extends AppCompatActivity {
+    private View mainLayout;
     private Button btnConfirm;
     private EditText txtEmail, txtCode;
     private Context mContext;
@@ -30,6 +34,8 @@ public class ConfirmCodeActivity extends AppCompatActivity {
 
         mappingComponent();
 
+        setMainLayout();
+
         getParseData();
 
         getAllData();
@@ -38,12 +44,26 @@ public class ConfirmCodeActivity extends AppCompatActivity {
     }
 
     private void mappingComponent() {
+        mainLayout = findViewById(R.id.mainLayout);
+
         btnConfirm = findViewById(R.id.buttonConfirm);
 
         txtEmail = findViewById(R.id.editTextEmail);
         txtCode = findViewById(R.id.editTextCode);
 
         mContext = this;
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void setMainLayout() {
+        mainLayout.setOnTouchListener((v, event) -> {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            if (getCurrentFocus() != null) {
+                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                getCurrentFocus().clearFocus();
+            }
+            return false;
+        });
     }
 
     private void getParseData() {

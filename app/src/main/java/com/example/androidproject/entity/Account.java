@@ -1,7 +1,7 @@
 package com.example.androidproject.entity;
 
 public class Account {
-    private long accountID;
+    private int accountID;
     private String email;
     private String password;
     private float money;
@@ -13,7 +13,7 @@ public class Account {
     public Account() {
     }
 
-    public Account(long accountID, String email, String password, float money, int confirmedCode, String fullName, String dob, boolean isVip){
+    public Account(int accountID, String email, String password, float money, int confirmedCode, String fullName, String dob, boolean isVip){
         this.accountID = accountID;
         this.email = email;
         this.password = password;
@@ -24,7 +24,7 @@ public class Account {
         this.isVip = isVip;
     }
 
-    public long getAccountID() {
+    public int getAccountID() {
         return accountID;
     }
 

@@ -69,6 +69,5 @@ public class DAOSignup {
     public void addAccount(int id, Account account) {
         mData.child("Account").child(String.valueOf(id)).setValue(null);
         mData.child("Account").child(String.valueOf(id)).setValue(account);
-
     }
 }

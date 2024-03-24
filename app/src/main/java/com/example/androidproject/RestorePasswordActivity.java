@@ -1,8 +1,11 @@
 package com.example.androidproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,6 +31,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class RestorePasswordActivity extends AppCompatActivity {
+    private View mainLayout;
     private Button btnSend;
     private EditText txtEmail;
     private Context mContext;
@@ -42,6 +46,8 @@ public class RestorePasswordActivity extends AppCompatActivity {
 
         mappingComponent();
 
+        setMainLayout();
+
         getParseData();
 
         getAllData();
@@ -50,11 +56,25 @@ public class RestorePasswordActivity extends AppCompatActivity {
     }
 
     private void mappingComponent() {
+        mainLayout = findViewById(R.id.mainLayout);
+
         txtEmail = findViewById(R.id.editTextEmail);
 
         btnSend = findViewById(R.id.buttonSend);
 
         mContext = this;
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void setMainLayout() {
+        mainLayout.setOnTouchListener((v, event) -> {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            if (getCurrentFocus() != null) {
+                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                getCurrentFocus().clearFocus();
+            }
+            return false;
+        });
     }
 
     private void getParseData() {

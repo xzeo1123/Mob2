@@ -1,10 +1,12 @@
 package com.example.androidproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -23,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
+    private View mainLayout;
     private EditText txtEmail, txtPassword;
     private Button btnLogin, btnSignup, btnConfirm, btnForget;
     private CheckBox cbStorePassword;
@@ -43,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         mappingComponent();
 
         setupComponent();
+
+        setMainLayout();
 
         getParseData();
 
@@ -83,6 +88,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void mappingComponent() {
+        mainLayout = findViewById(R.id.mainLayout);
+
         txtEmail = findViewById(R.id.editTextEmail);
         txtPassword = findViewById(R.id.editTextPassword);
 
@@ -96,6 +103,18 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         mContext = this;
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void setMainLayout() {
+        mainLayout.setOnTouchListener((v, event) -> {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            if (getCurrentFocus() != null) {
+                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                getCurrentFocus().clearFocus();
+            }
+            return false;
+        });
     }
 
     private void setupComponent() {
@@ -216,7 +235,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
 
             finish();
-        }, 3000);
+        }, 2000);
     }
 
     private void StorePassword(int position) {

@@ -1,14 +1,12 @@
 package com.example.androidproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.androidproject.dao.AccountDAO;
-import com.example.androidproject.entity.Account;
 
 public class HomePage extends AppCompatActivity {
     AccountDAO accountDAO;
@@ -20,23 +18,19 @@ public class HomePage extends AppCompatActivity {
 
         accountDAO = new AccountDAO(this);
 
-        Account ac;
-        ac = accountDAO.getAccount();
-        ac = accountDAO.getAccount();
-        try {
-            Log.i("Getted Account", ac.getEmail());
-        } catch (NullPointerException e) {
-            Log.i("Getted Account", "Account get bi null");
-        }
-
-
-        Button btn = findViewById(R.id.buttonLogout);
-        btn.setOnClickListener(v -> {
+        Button btn1 = findViewById(R.id.buttonLogout);
+        btn1.setOnClickListener(v -> {
             boolean storeState = accountDAO.getStoreState();
             if(!storeState) {
                 accountDAO.delAccount();
             }
             Intent intent = new Intent(HomePage.this, LoginActivity.class);
+            startActivity(intent);
+        });
+
+        Button btn2 = findViewById(R.id.buttonUpdateInfo);
+        btn2.setOnClickListener(v -> {
+            Intent intent = new Intent(HomePage.this, UpdatePasswordActivity.class);
             startActivity(intent);
         });
     }
