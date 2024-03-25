@@ -18,9 +18,9 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <ImageButton
-        android:id="@+id/imageButtonNext"
-        android:layout_width="26dp"
-        android:layout_height="22dp"
+        android:id="@+id/imageButtonBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:srcCompat="@drawable/next"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="22dp" />
