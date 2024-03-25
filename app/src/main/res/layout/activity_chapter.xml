@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chapter">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="411dp"
+        android:layout_height="56dp"
+        android:background="#7186FB"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="0"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="26dp"
+        android:layout_height="22dp"
+        app:srcCompat="@drawable/left_arrow"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="22dp" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="3HT Manga"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="22dp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/detail"
+                android:layout_width="217dp"
+                android:layout_height="wrap_content"
+                android:background="#36373C"
+                android:text="Introduce"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp" />
+
+            <Button
+                android:id="@+id/chapter"
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:background="#4D4F5E"
+                android:text="Chapter"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X chapters in total"
+        android:textStyle="bold"
+        android:textSize="13dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="116dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chap 1"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16:03 22/01/2020"
+        android:textColor="#828282"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="159dp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="#828282"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="181dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chap 2"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="191dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16:03 03/02/2020"
+        android:textColor="#828282"
+        android:textSize="10dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="207dp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="#828282"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="228dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
