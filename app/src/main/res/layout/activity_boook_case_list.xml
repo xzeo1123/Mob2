@@ -172,7 +172,5 @@
             android:text="&#8942;"
             android:textSize="24sp" />
 
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
