@@ -87,5 +87,4 @@
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="460dp" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

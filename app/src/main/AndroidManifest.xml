@@ -13,6 +13,42 @@
         android:theme="@style/Theme.AndroidProject"
         tools:targetApi="31">
         <activity
+            android:name=".DetailMGActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChapterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WriteCmtActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BCListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BCLikedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BCReadingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserAftActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserBefActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserBeforeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

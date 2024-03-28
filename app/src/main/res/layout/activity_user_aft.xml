@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserActivity_after">
+    tools:context=".UserAftActivity">
 
     <ImageView
         android:id="@+id/imageBg"
@@ -23,9 +23,8 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="117dp" />
 
-    //setting
-
     <TextView
+        android:id="@+id/nameUser"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:text="Nguyen Van A"
@@ -34,7 +33,7 @@
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="122dp" />
 
-    //setting
+    <!-- setting -->
     <TextView
         android:layout_width="54dp"
         android:layout_height="22dp"
@@ -110,7 +109,7 @@
         tools:layout_editor_absoluteX="349dp"
         tools:layout_editor_absoluteY="241dp" />
 
-    //membership
+    <!-- membership -->
     <TextView
         android:layout_width="100dp"
         android:layout_height="22dp"
@@ -210,7 +209,7 @@
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="455dp" />
 
-    //others
+    <!--others -->
     <TextView
         android:layout_width="54dp"
         android:layout_height="22dp"

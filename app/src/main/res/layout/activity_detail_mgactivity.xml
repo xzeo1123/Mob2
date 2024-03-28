@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsManga">
-
+    tools:context=".DetailMGActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -232,7 +231,7 @@
         tools:layout_editor_absoluteY="501dp" />
 
     <ImageView
-        android:id="@+id/imageUser"
+        android:id="@+id/imageView2"
         android:layout_width="20dp"
         android:layout_height="20dp"
         app:srcCompat="@drawable/user"
@@ -263,7 +262,5 @@
         android:textSize="10dp"
         tools:layout_editor_absoluteX="51dp"
         tools:layout_editor_absoluteY="569dp" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
