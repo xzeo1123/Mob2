@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BCReadingActivity">
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:srcCompat="@drawable/next"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="Bookcase"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/reading"
+                android:layout_width="148dp"
+                android:layout_height="wrap_content"
+                android:background="#36373C"
+                android:text="Reading"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp"
+                tools:ignore="ButtonStyle,HardcodedText"/>
+
+            <Button
+                android:id="@+id/favor"
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:background="#4D4F5E"
+                android:text="Favorite"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp"
+                tools:ignore="ButtonStyle,HardcodedText"/>
+
+            <Button
+                android:id="@+id/readList"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:background="#4D4F5E"
+                android:text="List"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp"
+                tools:ignore="ButtonStyle,HardcodedText"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="116dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imageBC1"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg1_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/nameBC1"
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Naruto"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="116dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imageBC2"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg4_1"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:id="@+id/nameBC2"
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Shin"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="116dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imageBC3"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg2_1"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:id="@+id/nameBC3"
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Conan"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="314dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imageBC4"
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg3_1"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:id="@+id/nameBC4"
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Doraemon"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminPostedActivity">
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:srcCompat="@drawable/next"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="Posted"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="78dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg1_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Naruto"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="78dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg4_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Shin"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables"
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="78dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg2_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Conan"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="277dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg3_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Doraemon"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonNewManga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Manga"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="271dp"
+        tools:layout_editor_absoluteY="7dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

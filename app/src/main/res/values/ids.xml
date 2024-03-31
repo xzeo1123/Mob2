@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="detail" type="id" />
+    <item name="chapter" type="id" />
+    <item name="buttonContinue" type="id" />
+    <item name="buttonAdd" type="id" />
+</resources>
