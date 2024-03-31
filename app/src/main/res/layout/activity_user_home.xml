@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserHomeActivity">
+
+    <SearchView
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:queryHint="Search..."
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="18dp" />
+
+    <ImageView
+        android:id="@+id/imageUser"
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        app:srcCompat="@drawable/avt_user"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageNotify"
+        android:layout_width="26dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/bell"
+        tools:layout_editor_absoluteX="369dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:srcCompat="@drawable/mg1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="69dp"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:layout_width="25dp"
+        android:layout_height="28dp"
+        app:srcCompat="@drawable/back"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="169dp"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <ImageButton
+        android:layout_width="25dp"
+        android:layout_height="28dp"
+        app:srcCompat="@drawable/next"
+        tools:layout_editor_absoluteX="386dp"
+        tools:layout_editor_absoluteY="169dp"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <!-- Hot -->
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:text="Hot🔥"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="320dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <ImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/next"
+        tools:layout_editor_absoluteX="369dp"
+        tools:layout_editor_absoluteY="325dp"
+        tools:ignore="ContentDescription,DuplicateIds,MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="355dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg1_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Naruto"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="355dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg2_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Conan"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="355dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg4_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Shin"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!-- most Viewed -->
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:text="Most Viewed"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="558dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="591dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg4_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Shin"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="591dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg2_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Conan"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="591dp"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg1_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Naruto"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/next"
+        tools:layout_editor_absoluteX="369dp"
+        tools:layout_editor_absoluteY="563dp"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChapterActivity">
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="26dp"
+        android:layout_height="22dp"
+        app:srcCompat="@drawable/back"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="3HT Manga"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/detail"
+                android:layout_width="217dp"
+                android:layout_height="wrap_content"
+                android:background="#36373C"
+                android:text="Introduce"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp"
+                tools:ignore="ButtonStyle,HardcodedText"/>
+
+            <Button
+                android:id="@+id/chapter"
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:background="#4D4F5E"
+                android:text="Chapter"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp"
+                tools:ignore="ButtonStyle,HardcodedText"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="134dp"
+        tools:ignore="DuplicateIds,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X chapters in total"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="116dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chap 1"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="143dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16:03 22/01/2020"
+        android:textColor="#828282"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="159dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints,SmallSp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="#828282"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="181dp"
+        tools:ignore="DuplicateIds,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chap 2"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="191dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16:03 03/02/2020"
+        android:textColor="#828282"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="207dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints,SmallSp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="#828282"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="228dp"
+        tools:ignore="DuplicateIds,MissingConstraints"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailMgaActivity">
+
+    <ImageButton
+        android:layout_width="26dp"
+        android:layout_height="22dp"
+        app:srcCompat="@drawable/back"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="3HT Manga"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="22dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="217dp"
+                android:layout_height="wrap_content"
+                android:background="#36373C"
+                android:text="Introduce"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp"
+                tools:ignore="ButtonStyle,HardcodedText" />
+
+            <Button
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:background="#4D4F5E"
+                android:text="Chapter"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteY="18dp"
+                tools:ignore="ButtonStyle,HardcodedText"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:layout_width="117dp"
+        android:layout_height="161dp"
+        app:srcCompat="@drawable/mg2_1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="126dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONAN"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="126dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="145dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#Category"
+        android:textColor="#1A4BFA"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="160dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/viewer"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="188dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="30dp"
+        android:layout_height="14dp"
+        android:text="300k"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="191dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <ImageView
+        android:id="@+id/imageLike"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/heart"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="188dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/like"
+        android:layout_width="70dp"
+        android:layout_height="14dp"
+        android:text="1384291"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="260dp"
+        tools:layout_editor_absoluteY="191dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <Button
+        android:id="@+id/buttonFollow"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:text="Follow"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="225dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonAdd2Favour"
+        android:layout_width="140dp"
+        android:layout_height="34dp"
+        android:text="Add to favourite"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="256dp"
+        tools:ignore="HardcodedText,MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTRODUCE"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="308dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="316dp"
+        tools:ignore="DuplicateIds,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The story about ...."
+        android:textSize="11sp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="330dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="410dp"
+        tools:ignore="DuplicateIds,MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEW COMMENT"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="420dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <Button
+        android:id="@+id/buttonComment"
+        android:layout_width="136dp"
+        android:layout_height="32dp"
+        android:text="+ Write a Comment"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="444dp"
+        tools:ignore="HardcodedText,MissingConstraints,SmallSp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="490dp"
+        tools:ignore="DuplicateIds,MissingConstraints"/>
+
+    <TextView
+        android:id="@+id/recentCmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RECENT COMMENTS"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="501dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/avt_user"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="538dp"
+        tools:ignore="ContentDescription,MissingConstraints"/>
+
+    <FrameLayout
+        android:layout_width="311dp"
+        android:layout_height="41dp"
+        android:background="#D9D9D9"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="528dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/nameUser"
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:text="Nguyen Van A \nThat good!"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/timeCmt"
+        android:layout_width="59dp"
+        android:layout_height="14dp"
+        android:text="3 days ago"
+        android:textSize="10sp"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="569dp"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints,SmallSp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
