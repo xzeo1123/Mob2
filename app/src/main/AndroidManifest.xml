@@ -44,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminAccAdminActivity"
+            android:name=".activity.admin.AdminAccAdminActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,7 +53,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminEditMGaActivity"
+            android:name=".activity.admin.AdminEditMGaActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminWriteMgaActivity"
+            android:name=".activity.admin.AdminWriteMgaActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,7 +71,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminNewMgaActivity"
+            android:name=".activity.admin.AdminNewMgaActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -80,7 +80,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminPostedActivity"
+            android:name=".activity.admin.AdminPostedActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -89,7 +89,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminHomeActivity"
+            android:name=".activity.admin.AdminHomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -98,7 +98,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminLoginActivity"
+            android:name=".activity.admin.AdminLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -107,7 +107,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BCReadingActivity"
+            android:name=".activity.bookcase.BCReadingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -116,7 +116,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BCFavorActivity"
+            android:name=".activity.bookcase.BCFavorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -125,7 +125,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BCListActivity"
+            android:name=".activity.bookcase.BCListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -134,7 +134,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ChapterActivity"
+            android:name=".activity.ChapterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -143,7 +143,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailMgaActivity"
+            android:name=".activity.DetailMgaActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -152,7 +152,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WriteCmtActivity"
+            android:name=".activity.WriteCmtActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -161,7 +161,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserBeforeActivity"
+            android:name=".activity.user.UserBeforeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -170,7 +170,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserAfter"
+            android:name=".activity.user.UserAfter"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -179,7 +179,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserHomeActivity"
+            android:name=".activity.user.UserHomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -188,7 +188,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserRegisterActivity"
+            android:name=".activity.user.UserRegisterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -197,7 +197,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserLoginActivity"
+            android:name=".activity.user.UserLoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -206,7 +206,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
