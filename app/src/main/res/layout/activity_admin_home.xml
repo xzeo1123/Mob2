@@ -171,4 +171,54 @@
         tools:layout_editor_absoluteY="416dp"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
 
+    <Button
+        android:id="@+id/btnToAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin"
+        tools:layout_editor_absoluteX="266dp"
+        tools:layout_editor_absoluteY="199dp" />
+
+    <Button
+        android:id="@+id/btnToUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="199dp" />
+
+    <Button
+        android:id="@+id/btnNewManga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Manga"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="287dp" />
+
+    <Button
+        android:id="@+id/btnPostedManga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posted Manga"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="335dp" />
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/btnChangePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Password"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="459dp" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
