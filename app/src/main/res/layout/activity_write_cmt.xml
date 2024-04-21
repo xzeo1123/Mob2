@@ -7,39 +7,42 @@
     android:layout_height="match_parent"
     tools:context=".WriteCmtActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="62dp"
-        android:layout_height="38dp"
-        android:text="<-"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@null"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/back"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="38dp"
         android:text="Write a Comment"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
+        app:layout_constraintVertical_bias="0.037"
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/buttonSend"
+        android:id="@+id/buttonContinue"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:text="Send"
+        android:background="@color/color_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
@@ -81,6 +84,7 @@
         android:layout_marginStart="22dp"
         android:layout_marginEnd="208dp"
         android:text="CONAN"
+        android:textStyle="bold"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,12 +105,13 @@
         app:layout_constraintVertical_bias="0.454"
         tools:ignore="MissingConstraints">
 
-        <TextView
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter your comment..."
+            android:hint="Enter your comment..."
+            android:inputType="text"
             android:textColor="#63656C"
             android:textSize="12sp"
-            tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+            tools:ignore="Autofill,ContentDescription,HardcodedText,MissingConstraints" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

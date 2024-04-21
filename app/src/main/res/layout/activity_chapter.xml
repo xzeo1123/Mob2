@@ -20,32 +20,34 @@
         tools:ignore="ContentDescription" />
 
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="62dp"
-        android:layout_height="38dp"
-        android:text="<-"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@null"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/back"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="38dp"
-        android:text="3HT Manga"
-        android:textSize="14sp"
+        android:text="3HT MANGA"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.332"
+        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034"
+        app:layout_constraintVertical_bias="0.037"
         tools:ignore="HardcodedText" />
 
     <HorizontalScrollView

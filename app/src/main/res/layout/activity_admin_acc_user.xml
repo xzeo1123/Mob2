@@ -7,18 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".AdminAccUserActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="62dp"
-        android:layout_height="38dp"
-        android:text="<-"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/back"
+        android:scaleType="fitXY"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.034"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -139,6 +141,7 @@
             android:layout_height="wrap_content"
             android:text="Delete"
             android:textSize="12sp"
+            android:background="@color/color_delete"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>
@@ -206,6 +209,7 @@
             android:layout_height="wrap_content"
             android:text="Delete"
             android:textSize="12sp"
+            android:background="@color/color_delete"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>

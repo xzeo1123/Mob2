@@ -7,46 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".AdminEditMGaActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="62dp"
-        android:layout_height="38dp"
-        android:text="<-"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/back"
+        android:scaleType="fitXY"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.034"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="38dp"
         android:text="Edit"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintHorizontal_bias="0.259"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
+        app:layout_constraintVertical_bias="0.034"
         tools:ignore="HardcodedText" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonAdd"
-        android:layout_width="58dp"
-        android:layout_height="35dp"
-        android:text="+"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.034"
+        app:srcCompat="@drawable/add"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -277,18 +281,19 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints,SmallSp" />
 
-    <TextView
+    <Button
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit manga cover"
         android:textSize="12sp"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185"
+        app:layout_constraintVertical_bias="0.18"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <FrameLayout
@@ -302,10 +307,13 @@
         app:layout_constraintVertical_bias="0.952"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/add"
+        <ImageButton
+            android:layout_width="140dp"
+            android:layout_height="98dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/add"
+            android:background="@null"
             tools:ignore="ContentDescription,MissingConstraints" />
 
     </FrameLayout>

@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.028"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageUser"
         android:layout_width="30dp"
         android:layout_height="32dp"
@@ -30,9 +30,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.025"
         app:srcCompat="@drawable/avt_user"
+        android:background="@null"
+        android:scaleType="fitXY"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageNotify"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -43,6 +45,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.028"
         app:srcCompat="@drawable/bell"
+        android:background="@null"
+        android:scaleType="fitXY"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
@@ -56,6 +60,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.128"
         app:srcCompat="@drawable/mg1"
+        android:scaleType="fitXY"
         tools:ignore="ContentDescription,MissingConstraints" />
 
 
