@@ -7,63 +7,104 @@
     android:layout_height="match_parent"
     tools:context=".UserRegisterActivity">
 
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="194dp"
         android:layout_height="40dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Email"
+        android:hint="Enter Your Email"
+        android:inputType="textEmailAddress"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="214dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <ImageView
+        android:id="@+id/imageView22"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        app:srcCompat="@drawable/email"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="224dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="194dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="273dp"
-        tools:ignore="Autofill,LabelFor,MissingConstraints" />
-
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.466"
         app:srcCompat="@drawable/lock_password"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="285dp"
-        tools:ignore="ContentDescription,DuplicateIds,MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <EditText
         android:id="@+id/reEnterPass"
         android:layout_width="194dp"
         android:layout_height="40dp"
         android:ems="10"
+        android:hint="Retype Password"
         android:inputType="textPassword"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="328dp"
-        tools:ignore="Autofill,LabelFor,MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:background="@color/color_user"
+        android:text="REGISTER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.651"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
         android:layout_width="20dp"
         android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396"
         app:srcCompat="@drawable/lock_password"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="341dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        tools:ignore="ContentDescription,DuplicateIds,MissingConstraints" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="194dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints" />
 
     <CheckBox
         android:id="@+id/checkBoxAgree"
@@ -71,17 +112,24 @@
         android:layout_height="40dp"
         android:text="I agree to the Term of Use"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="388dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548"
         tools:ignore="HardcodedText,MissingConstraints" />
 
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:text="REGISTER"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="460dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.199"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319"
+        app:srcCompat="@drawable/email"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

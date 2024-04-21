@@ -7,11 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".UserUpdateInfoActivity">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="62dp"
+        android:layout_height="38dp"
+        android:text="<-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.332"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
+        android:text="Update Your Info"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="86dp" />
+
+    <LinearLayout
+        android:layout_width="419dp"
+        android:layout_height="653dp"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        tools:layout_editor_absoluteY="78dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,10 +74,10 @@
             <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:inputType="textEmailAddress"
+                android:layout_weight="1"
                 android:hint="Enter your email"
+                android:inputType="textEmailAddress"
                 tools:ignore="Autofill,HardcodedText" />
 
         </LinearLayout>
@@ -40,8 +85,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="100dp"
@@ -54,10 +99,10 @@
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="50dp"
-                android:inputType="textPassword"
+                android:layout_weight="1"
                 android:hint="Enter your password"
+                android:inputType="textPassword"
                 tools:ignore="Autofill,HardcodedText,InefficientWeight" />
 
         </LinearLayout>
@@ -73,32 +118,32 @@
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
             android:layout_marginTop="16dp"
+            android:text="Login"
             tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/buttonSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Signup"
             android:layout_marginTop="8dp"
+            android:text="Signup"
             tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/buttonConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Confirm Code"
             android:layout_marginTop="8dp"
+            android:text="Confirm Code"
             tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/buttonForget"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forget Password ?"
             android:layout_marginTop="8dp"
+            android:text="Forget Password ?"
             tools:ignore="HardcodedText" />
 
         <ProgressBar

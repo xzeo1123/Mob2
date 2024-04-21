@@ -7,54 +7,90 @@
     android:layout_height="match_parent"
     tools:context=".UserLoginActivity">
 
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="270dp"
         android:layout_height="50dp"
+        android:layout_marginTop="596dp"
+        android:background="@color/color_user"
         android:text="Login"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="580dp"
+        app:layout_constraintBottom_toTopOf="@+id/textForgotPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="HardcodedText,MissingConstraints" />
-
 
     <EditText
         android:id="@+id/email"
         android:layout_width="194dp"
         android:layout_height="40dp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="text"
-        android:text="Email"
+        android:inputType="textEmailAddress"
+        android:hint="Enter Your Email"
         android:textSize="14dp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="415dp"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,SpUsage,TextFields"
-        android:autofillHints="" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,SpUsage,TextFields" />
 
     <ImageView
+        android:id="@+id/imageUser"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageLock"
+        app:layout_constraintEnd_toStartOf="@+id/email"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942"
         app:srcCompat="@drawable/profile_user_icon"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="424dp"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="194dp"
         android:layout_height="40dp"
+        android:layout_marginTop="472dp"
         android:ems="10"
         android:inputType="textPassword"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="463dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="Autofill,LabelFor,MissingConstraints" />
 
     <ImageView
+        android:id="@+id/imageLock"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/password"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.668"
         app:srcCompat="@drawable/lock_password"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="474dp"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <CheckBox
@@ -64,9 +100,28 @@
         android:text="Remember password"
         android:textSize="12sp"
         android:textStyle="italic"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="510dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.759"
         tools:ignore="HardcodedText,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textForgotPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password?"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
+        tools:ignore="HardcodedText,MissingConstraints,SmallSp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,18 +129,12 @@
         android:text="Create a new account"
         android:textSize="10sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="647dp"
-        tools:ignore="HardcodedText,MissingConstraints,SmallSp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot password?"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="260dp"
-        tools:layout_editor_absoluteY="647dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.92"
         tools:ignore="HardcodedText,MissingConstraints,SmallSp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

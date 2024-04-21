@@ -7,31 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".BCFavorActivity">
 
-    <ImageButton
-        android:id="@+id/imageButtonBack"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        app:srcCompat="@drawable/next"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_user"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="62dp"
+        android:layout_height="38dp"
+        android:text="<-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="20dp"
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
         android:text="Bookcase"
         android:textSize="14sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038"
+        tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
-        android:layout_width="wrap_content"
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093"
         tools:ignore="MissingConstraints">
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,14 +63,13 @@
 
             <Button
                 android:id="@+id/reading"
-                android:layout_width="148dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="#36373C"
                 android:text="Reading"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle, HardcodedText" />
+                tools:ignore="ButtonStyle, HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
                 android:id="@+id/favor"
@@ -57,8 +79,8 @@
                 android:text="Favorite"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle, HardcodedText" />
+                tools:ignore="ButtonStyle, HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
                 android:id="@+id/list"
@@ -67,108 +89,33 @@
                 android:background="#4D4F5E"
                 android:text="List"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle, HardcodedText" />
+                tools:ignore="ButtonStyle, HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
+
         </LinearLayout>
     </HorizontalScrollView>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.608"
         tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
-            android:id="@+id/imageBC1"
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg1_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/nameBC1"
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Naruto"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="116dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:id="@+id/imageBC2"
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg4_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/nameBC2"
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Shin"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="116dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:id="@+id/imageBC3"
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg2_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/nameBC3"
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Conan"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="314dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:id="@+id/imageBC4"
             android:layout_width="match_parent"
             android:layout_height="155dp"
             app:srcCompat="@drawable/mg3_1"
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/nameBC4"
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Doraemon"
@@ -176,4 +123,88 @@
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg4_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Shin"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg2_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Conan"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg1_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Naruto"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

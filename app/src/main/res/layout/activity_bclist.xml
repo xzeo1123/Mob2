@@ -7,31 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".BCListActivity">
 
-    <ImageButton
-        android:id="@+id/imageButtonBack"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        app:srcCompat="@drawable/next"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_user"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="62dp"
+        android:layout_height="38dp"
+        android:text="<-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="20dp"
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
         android:text="Bookcase"
         android:textSize="14sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038"
+        tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093"
         tools:ignore="MissingConstraints">
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,14 +63,13 @@
 
             <Button
                 android:id="@+id/reading"
-                android:layout_width="148dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:background="#36373C"
                 android:text="Reading"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
+                tools:ignore="ButtonStyle, HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
                 android:id="@+id/favor"
@@ -56,104 +78,42 @@
                 android:background="#4D4F5E"
                 android:text="Favorite"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
+                tools:ignore="ButtonStyle, HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
-                android:id="@+id/readList"
-                android:layout_width="130dp"
+                android:id="@+id/list"
+                android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:background="#4D4F5E"
                 android:text="List"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
+                tools:ignore="ButtonStyle, HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
+
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!--Purchased-->
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="392dp"
         android:layout_height="166dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="80dp"
         android:orientation="horizontal"
         android:padding="2dp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="117dp"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:id="@+id/imagePurch"
-            android:layout_width="149dp"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg1_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="34dp"
-            android:text="Lists of Purchased \n6 stories"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText"/>
-
-        <Button
-            android:layout_width="73dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="&#8942;"
-            android:textSize="24sp"
-            tools:ignore="DuplicateIds,HardcodedText" />
-
-    </LinearLayout>
-
-    <!--Lists 1-->
-    <LinearLayout
-        android:layout_width="392dp"
-        android:layout_height="166dp"
-        android:orientation="horizontal"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="292dp"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:layout_width="149dp"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg2_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="34dp"
-            android:text="Lists 1 \n6 stories"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText"/>
-
-        <Button
-            android:layout_width="73dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="&#8942;"
-            android:textSize="24sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <!--new list -->
-    <LinearLayout
-        android:layout_width="392dp"
-        android:layout_height="166dp"
-        android:orientation="horizontal"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="470dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         tools:ignore="MissingConstraints">
 
         <ImageButton
             android:id="@+id/imageButtonAdd"
-            android:layout_width="114dp"
-            android:layout_height="166dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/add"
             tools:ignore="ContentDescription,InefficientWeight,MissingConstraints" />
@@ -172,6 +132,81 @@
             android:layout_gravity="end"
             android:text="&#8942;"
             android:textSize="24sp"
-            tools:ignore="HardcodedText"/>
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="392dp"
+        android:layout_height="166dp"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView2"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.217"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/imagePurch"
+            android:layout_width="149dp"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg1_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="168dp"
+            android:layout_height="34dp"
+            android:text="Lists of Purchased \n6 stories"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="&#8942;"
+            android:textSize="24sp"
+            tools:ignore="DuplicateIds,HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="392dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="149dp"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg2_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="168dp"
+            android:layout_height="34dp"
+            android:text="Lists 1 \n6 stories"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="&#8942;"
+            android:textSize="24sp"
+            tools:ignore="HardcodedText" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

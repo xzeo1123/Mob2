@@ -7,29 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".DetailMgaActivity">
 
-    <ImageButton
-        android:layout_width="26dp"
-        android:layout_height="22dp"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+   <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="62dp"
+        android:layout_height="38dp"
+        android:text="<-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="20dp"
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
         android:text="3HT Manga"
         android:textSize="14sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.332"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.106"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -43,9 +70,8 @@
                 android:background="#36373C"
                 android:text="Introduce"
                 android:textSize="12sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText" />
+                tools:ignore="ButtonStyle,HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
                 android:layout_width="194dp"
@@ -54,156 +80,37 @@
                 android:text="Chapter"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
-
+                tools:ignore="ButtonStyle,HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
         </LinearLayout>
     </HorizontalScrollView>
 
     <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="117dp"
         android:layout_height="161dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.229"
         app:srcCompat="@drawable/mg2_1"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="126dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CONAN"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="126dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Author"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="145dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="#Category"
-        android:textColor="#1A4BFA"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="160dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/viewer"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="188dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <TextView
-        android:id="@+id/view"
-        android:layout_width="30dp"
-        android:layout_height="14dp"
-        android:text="300k"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="191dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <ImageView
-        android:id="@+id/imageLike"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/heart"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="188dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <TextView
-        android:id="@+id/like"
-        android:layout_width="70dp"
-        android:layout_height="14dp"
-        android:text="1384291"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="260dp"
-        tools:layout_editor_absoluteY="191dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <Button
-        android:id="@+id/buttonFollow"
-        android:layout_width="89dp"
-        android:layout_height="34dp"
-        android:text="Follow"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="225dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
-
-    <Button
-        android:id="@+id/buttonAdd2Favour"
-        android:layout_width="140dp"
-        android:layout_height="34dp"
-        android:text="Add to favourite"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="256dp"
-        tools:ignore="HardcodedText,MissingConstraints"/>
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="INTRODUCE"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="308dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="320dp"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="316dp"
-        tools:ignore="DuplicateIds,MissingConstraints" />
-
-    <TextView
-        android:id="@+id/details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="The story about ...."
-        android:textSize="11sp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="330dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="410dp"
-        tools:ignore="DuplicateIds,MissingConstraints"/>
-
-    <TextView
-        android:id="@+id/comment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NEW COMMENT"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="420dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="164dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recentCmt"
+        app:srcCompat="@drawable/avt_user"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <Button
         android:id="@+id/buttonComment"
@@ -211,18 +118,13 @@
         android:layout_height="32dp"
         android:text="+ Write a Comment"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="444dp"
-        tools:ignore="HardcodedText,MissingConstraints,SmallSp"/>
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="@android:color/black"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="490dp"
-        tools:ignore="DuplicateIds,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.648"
+        tools:ignore="HardcodedText,MissingConstraints,SmallSp" />
 
     <TextView
         android:id="@+id/recentCmt"
@@ -231,25 +133,55 @@
         android:text="RECENT COMMENTS"
         android:textSize="12sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="501dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/avt_user"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="538dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+    <View
+        android:id="@+id/line"
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679"
+        tools:ignore="DuplicateIds,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTRODUCE"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.446"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="311dp"
         android:layout_height="41dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
         android:background="#D9D9D9"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="528dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/recentCmt"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
         <TextView
@@ -259,17 +191,220 @@
             android:text="Nguyen Van A \nThat good!"
             android:textSize="11sp"
             android:textStyle="bold"
-            tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEW COMMENT"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447"
+        tools:ignore="DuplicateIds,MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonFollow"
+        android:layout_width="89dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="172dp"
+        android:text="Follow"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonAdd2Favour"
+        android:layout_width="140dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="124dp"
+        android:text="Add to favourite"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.385"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="216dp"
+        android:text="CONAN"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="208dp"
+        android:layout_marginBottom="536dp"
+        android:text="#Category"
+        android:textColor="#1A4BFA"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="224dp"
+        android:layout_marginBottom="552dp"
+        android:text="Author"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView24"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="504dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/viewer"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/like"
+        android:layout_width="70dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="16dp"
+        android:text="1384291"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageLike"
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageLike"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/heart"
+        tools:ignore="ContentDescription,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="30dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="508dp"
+        android:text="300k"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/timeCmt"
         android:layout_width="59dp"
         android:layout_height="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="140dp"
         android:text="3 days ago"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="569dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints,SmallSp"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints,SmallSp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="390dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.583"
+        tools:ignore="DuplicateIds,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="380dp"
+        android:text="The story about ...."
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

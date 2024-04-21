@@ -7,74 +7,106 @@
     android:layout_height="match_parent"
     tools:context=".WriteCmtActivity">
 
-    <ImageButton
-        android:id="@+id/imageButtonBack"
-        android:layout_width="26dp"
-        android:layout_height="22dp"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="62dp"
+        android:layout_height="38dp"
+        android:text="<-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
         android:text="Write a Comment"
         android:textSize="14sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.038"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonSend"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:text="Send"
-        tools:layout_editor_absoluteX="304dp"
-        tools:layout_editor_absoluteY="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="117dp"
         android:layout_height="161dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124"
         app:srcCompat="@drawable/mg2_1"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="77dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="220dp"
         android:text="Author"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="96dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.134"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="208dp"
         android:text="CONAN"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="77dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <FrameLayout
         android:layout_width="378dp"
         android:layout_height="159dp"
         android:background="#D0DAFE"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="247dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454"
         tools:ignore="MissingConstraints">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter your comment..."
-            android:textSize="12sp"
             android:textColor="#63656C"
-            tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+            android:textSize="12sp"
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
