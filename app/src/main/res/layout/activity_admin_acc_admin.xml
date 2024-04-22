@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@null"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,22 +19,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:srcCompat="@drawable/back_button"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="134dp"
+        android:layout_width="300dp"
         android:layout_height="38dp"
         android:text="Account Management"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintHorizontal_bias="0.774"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.036"
         tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
@@ -69,8 +69,8 @@
                 android:text="User"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
+                tools:ignore="ButtonStyle,HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -121,7 +121,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit"
-            android:background="@color/color_edit"
             android:textSize="12sp"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
@@ -131,7 +130,6 @@
             android:layout_height="wrap_content"
             android:text="Delete"
             android:textSize="12sp"
-            android:background="@color/color_delete"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>
@@ -181,7 +179,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit"
-            android:background="@color/color_edit"
             android:textSize="12sp"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
@@ -191,7 +188,6 @@
             android:layout_height="wrap_content"
             android:text="Delete"
             android:textSize="12sp"
-            android:background="@color/color_delete"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>
@@ -201,7 +197,6 @@
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:text="ADD"
-        android:background="@color/colors_admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

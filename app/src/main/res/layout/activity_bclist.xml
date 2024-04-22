@@ -17,18 +17,18 @@
 
     <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@null"
+        android:importantForAccessibility="no"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.02"
+        app:srcCompat="@drawable/back_button" />
 
     <TextView
         android:id="@+id/textView"
@@ -39,10 +39,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
@@ -102,14 +102,14 @@
         android:layout_width="392dp"
         android:layout_height="166dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="80dp"
         android:orientation="horizontal"
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
         tools:ignore="MissingConstraints">
 
         <ImageButton
@@ -117,9 +117,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/add"
+            android:importantForAccessibility="no"
             android:scaleType="fitXY"
-            tools:ignore="ContentDescription,InefficientWeight,MissingConstraints" />
+            app:srcCompat="@drawable/add"
+            tools:ignore="InefficientWeight" />
 
         <TextView
             android:layout_width="168dp"
@@ -185,9 +186,10 @@
         android:padding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
         tools:ignore="MissingConstraints">
 
         <ImageView

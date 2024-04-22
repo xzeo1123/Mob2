@@ -8,8 +8,8 @@
     tools:context=".UserAfter">
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="411dp"
+        android:id="@+id/imageBg_User"
+        android:layout_width="match_parent"
         android:layout_height="153dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +151,7 @@
     <Switch
         android:id="@+id/nightMode"
         android:layout_width="50dp"
-        android:layout_height="24dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +164,7 @@
     <Switch
         android:id="@+id/unlockChap"
         android:layout_width="50dp"
-        android:layout_height="25dp"
+        android:layout_height="50dp"
         android:layout_marginStart="188dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +177,7 @@
     <Switch
         android:id="@+id/notify"
         android:layout_width="50dp"
-        android:layout_height="25dp"
+        android:layout_height="50dp"
         android:layout_marginStart="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@null"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,47 +19,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:srcCompat="@drawable/back_button"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="38dp"
         android:text="Write"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.04"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonContinue"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:text="Post"
-        android:background="@color/color_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041"
+        app:layout_constraintVertical_bias="0.036"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="388dp"
+        android:layout_height="75dp"
         android:text="Title of Chapter"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="83dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <View
         android:id="@+id/line"
@@ -68,10 +71,10 @@
         android:background="#FFD646"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168"
+        app:layout_constraintVertical_bias="0.23"
         tools:ignore="DuplicateIds,MissingConstraints" />
 
     <FrameLayout
@@ -84,7 +87,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291"
+        app:layout_constraintVertical_bias="0.441"
         tools:ignore="MissingConstraints">
 
         <ImageButton
@@ -94,9 +97,9 @@
             android:background="@null"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/add"
-            tools:ignore="ContentDescription,MissingConstraints"
             tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="164dp" />
+            tools:layout_editor_absoluteY="164dp"
+            android:importantForAccessibility="no" />
 
     </FrameLayout>
 
@@ -110,7 +113,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.072"
+        app:layout_constraintVertical_bias="0.092"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
 

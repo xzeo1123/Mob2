@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".BCFavorActivity">
 
-    <ImageView
+   <ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,35 +15,35 @@
         android:scaleType="centerCrop"
         tools:ignore="ContentDescription" />
 
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@null"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="38dp"
         android:text="Bookcase"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.036"
         tools:ignore="HardcodedText" />
+
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036"
+        app:srcCompat="@drawable/back_button" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
@@ -51,10 +51,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.093"
+        app:layout_constraintVertical_bias="0.111"
         tools:ignore="MissingConstraints">
 
 
@@ -71,7 +71,7 @@
                 android:text="Reading"
                 android:textSize="12sp"
                 tools:ignore="ButtonStyle, HardcodedText"
-                tools:layout_editor_absoluteY="18dp"/>
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
                 android:id="@+id/favor"
@@ -82,7 +82,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 tools:ignore="ButtonStyle, HardcodedText"
-                tools:layout_editor_absoluteY="18dp"/>
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
                 android:id="@+id/list"
@@ -92,7 +92,7 @@
                 android:text="List"
                 android:textSize="12sp"
                 tools:ignore="ButtonStyle, HardcodedText"
-                tools:layout_editor_absoluteY="18dp"/>
+                tools:layout_editor_absoluteY="18dp" />
 
         </LinearLayout>
     </HorizontalScrollView>

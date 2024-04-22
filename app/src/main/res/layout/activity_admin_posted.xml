@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@null"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,30 +19,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:srcCompat="@drawable/back_button"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="134dp"
         android:layout_height="38dp"
         android:text="Posted"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.036"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonNewMg"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:text="New Manga"
-        android:background="@color/color_edit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
@@ -74,7 +73,7 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Naruto"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
@@ -101,7 +100,7 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Shin"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
@@ -129,7 +128,7 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Conan"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
@@ -157,7 +156,7 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Doraemon"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
