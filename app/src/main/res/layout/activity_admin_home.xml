@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminHomeActivity">
-
-    <ImageView
-        android:layout_width="411dp"
-        android:layout_height="153dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bg_user"
-        tools:layout_editor_absoluteY="3dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageUser"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/admin_removebg_"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="117dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:text="Hello, Admin1!"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="121dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="411dp"
+            android:layout_height="153dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/bg_user"
+            tools:ignore="ContentDescription,MissingConstraints"
+            tools:layout_editor_absoluteY="3dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/imageUser"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/admin_removebg_"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="117dp"
+            tools:ignore="ContentDescription,MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Hello, Admin1!"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="121dp"
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    </LinearLayout>
+
 
     <!-- account management -->
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="22dp"
@@ -46,39 +58,69 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="166dp" />
 
-    <TextView
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="User"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="199dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/user_qly"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="199dp"
+            tools:ignore="ContentDescription,MissingConstraints" />
 
-    <ImageView
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:src="@drawable/user_qly"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="199dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text="User"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="199dp"
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
 
-    <ImageView
-        android:layout_width="14dp"
-        android:layout_height="14dp"
-        android:src="@drawable/admin_qly"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="225dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+        <Button
+            android:id="@+id/btnToUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            tools:layout_editor_absoluteX="150dp"
+            tools:layout_editor_absoluteY="199dp" />
 
-    <TextView
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="Admin"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="225dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/admin_qly"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="225dp"
+            tools:ignore="ContentDescription,MissingConstraints"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:text="Admin"
+            android:textSize="12sp"
+            tools:layout_editor_absoluteX="58dp"
+            tools:layout_editor_absoluteY="225dp"
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        <Button
+            android:id="@+id/btnToAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin"
+            tools:layout_editor_absoluteX="266dp"
+            tools:layout_editor_absoluteY="199dp" />
+
+    </LinearLayout>
+
+
 
 
     <!-- manga management -->
@@ -91,40 +133,26 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="265dp"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="New Manga"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="298dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnNewManga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Manga"
+            tools:layout_editor_absoluteX="151dp"
+            tools:layout_editor_absoluteY="287dp" />
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@drawable/add"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="296dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:src="@drawable/posted"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="324dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="Posted"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="325dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        <Button
+            android:id="@+id/btnPostedManga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posted Manga"
+            tools:layout_editor_absoluteX="150dp"
+            tools:layout_editor_absoluteY="335dp" />
+    </LinearLayout>
 
     <!-- account -->
     <TextView
@@ -137,88 +165,47 @@
         tools:layout_editor_absoluteY="362dp"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="Change password"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="390dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <ImageView
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:src="@drawable/pass_admin"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="388dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:src="@drawable/logout_admin"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="414dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="16dp"
-        android:text="Logout"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="416dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <Button
-        android:id="@+id/btnToAdmin"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Admin"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="199dp" />
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/pass_admin"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="388dp"
+            tools:ignore="ContentDescription,MissingConstraints"/>
 
-    <Button
-        android:id="@+id/btnToUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="User"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="199dp" />
 
-    <Button
-        android:id="@+id/btnNewManga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Manga"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="287dp" />
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="411dp" />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:src="@drawable/logout_admin"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="414dp"
+            tools:ignore="ContentDescription,MissingConstraints"/>
 
-    <Button
-        android:id="@+id/btnPostedManga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Posted Manga"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="335dp" />
-    <Button
-        android:id="@+id/btnLogOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="411dp" />
-
-    <Button
-        android:id="@+id/btnChangePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change Password"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="459dp" />
+        <Button
+            android:id="@+id/btnChangePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="459dp" />
+    </LinearLayout>
 
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>
