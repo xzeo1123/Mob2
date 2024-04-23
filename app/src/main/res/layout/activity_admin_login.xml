@@ -12,14 +12,13 @@
         android:id="@+id/buttonLogin"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginTop="596dp"
         android:text="Login"
-        app:layout_constraintBottom_toTopOf="@+id/textForgotPass"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.892"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
@@ -27,16 +26,31 @@
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565"
+        app:layout_constraintVertical_bias="0.577"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,SpUsage,TextFields" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPass"
+        android:layout_width="297dp"
+        android:layout_height="63dp"
+        android:text="Remember password"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.791"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageUser"
@@ -47,7 +61,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921"
+        app:layout_constraintVertical_bias="0.922"
         app:srcCompat="@drawable/profile_user_icon"
         tools:ignore="ContentDescription,MissingConstraints" />
 
@@ -56,16 +70,16 @@
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:ems="10"
+        android:hint="Password"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         android:textSize="16sp"
-        android:hint="Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.685"
-        android:importantForAutofill="no"
+        app:layout_constraintVertical_bias="0.692"
         tools:ignore="HardcodedText,LabelFor" />
 
     <ImageView
@@ -77,24 +91,9 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.67"
+        app:layout_constraintVertical_bias="0.675"
         app:srcCompat="@drawable/lock_password"
         tools:ignore="ContentDescription,MissingConstraints" />
-
-    <CheckBox
-        android:id="@+id/checkBoxPass"
-        android:layout_width="275dp"
-        android:layout_height="58dp"
-        android:text="Remember password"
-        android:textSize="12sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.602"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
-        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/textForgotPass"
@@ -108,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92"
+        app:layout_constraintVertical_bias="0.944"
         tools:ignore="HardcodedText,MissingConstraints,SmallSp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

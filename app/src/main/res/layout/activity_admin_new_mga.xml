@@ -72,28 +72,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add a cover"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202"
+        app:layout_constraintVertical_bias="0.201"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524"
-        tools:ignore="DuplicateIds,MissingConstraints" />
 
     <EditText
         android:id="@+id/editText"
@@ -104,24 +90,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62"
+        app:layout_constraintVertical_bias="0.696"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39"
-        tools:ignore="DuplicateIds,MissingConstraints" />
 
     <EditText
         android:id="@+id/editText2"
@@ -134,7 +107,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.869"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAdd"
@@ -145,28 +118,16 @@
         android:id="@+id/editText4"
         android:layout_width="388dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="376dp"
         android:text="Detail"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintHorizontal_bias="0.869"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.453"
-        tools:ignore="DuplicateIds,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.467"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <EditText
         android:id="@+id/editText3"
@@ -177,24 +138,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521"
+        app:layout_constraintVertical_bias="0.582"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643"
-        tools:ignore="DuplicateIds,MissingConstraints" />
 
     <FrameLayout
         android:layout_width="225dp"
@@ -202,10 +150,9 @@
         android:background="#D0DAFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852"
+        app:layout_constraintVertical_bias="0.884"
         tools:ignore="MissingConstraints">
 
         <ImageButton
@@ -213,9 +160,9 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:background="@null"
+            android:importantForAccessibility="no"
             android:scaleType="fitXY"
             android:src="@drawable/add"
-            android:importantForAccessibility="no"
             tools:layout_editor_absoluteX="93dp"
             tools:layout_editor_absoluteY="472dp" />
 
