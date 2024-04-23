@@ -1,23 +1,28 @@
 package com.example.androidproject;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidproject.dao.AccountDAO;
 import com.example.androidproject.dao.DAOLogin;
+import com.example.androidproject.dao.DAOLoginWithGoogle;
 import com.example.androidproject.entity.Account;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +30,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
-    private View mainLayout;
     private EditText txtEmail, txtPassword;
-    private Button btnLogin, btnSignup, btnConfirm, btnForget;
+    private Button btnLogin, btnSignup, btnConfirm, btnForget, btnGoogleLogin;
     private CheckBox cbStorePassword;
     private Context mContext;
     private final List<Integer> idList = new ArrayList<>();
@@ -36,7 +40,10 @@ public class LoginActivity extends AppCompatActivity {
     private final List<Integer> codeList = new ArrayList<>();
     private final DAOLogin daoLogin = new DAOLogin();
     private AccountDAO accountDAO;
-    private ProgressBar progressBar;
+    private FirebaseAuth auth;
+    GoogleSignInClient googleSignInClient;
+    private final DAOLoginWithGoogle daoLoginWithGoogle = new DAOLoginWithGoogle();
+    private final int RC_SIGN_IN = 40;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +54,13 @@ public class LoginActivity extends AppCompatActivity {
 
         setupComponent();
 
-        setMainLayout();
-
         getParseData();
 
         getSQLiteData();
 
         getAllData();
+
+        setupLoginGoogle();
 
         btnLogin.setOnClickListener(v -> checkLogin());
 
@@ -85,11 +92,11 @@ public class LoginActivity extends AppCompatActivity {
             intent.putExtra("passEmail", email);
             startActivity(intent);
         });
+
+        btnGoogleLogin.setOnClickListener(v -> signIn());
     }
 
     private void mappingComponent() {
-        mainLayout = findViewById(R.id.mainLayout);
-
         txtEmail = findViewById(R.id.editTextEmail);
         txtPassword = findViewById(R.id.editTextPassword);
 
@@ -97,23 +104,58 @@ public class LoginActivity extends AppCompatActivity {
         btnSignup = findViewById(R.id.buttonSignup);
         btnConfirm = findViewById(R.id.buttonConfirm);
         btnForget = findViewById(R.id.buttonForget);
+        btnGoogleLogin = findViewById(R.id.buttonGoogleLogin);
 
         cbStorePassword = findViewById(R.id.checkBoxStorePassword);
 
-        progressBar = findViewById(R.id.progressBar);
-
         mContext = this;
+
+        auth = FirebaseAuth.getInstance();
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    private void setMainLayout() {
-        mainLayout.setOnTouchListener((v, event) -> {
-            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-            if (getCurrentFocus() != null) {
-                inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
-                getCurrentFocus().clearFocus();
+    private void setupLoginGoogle() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("153641149690-h6pri5gqsipshbopkivt9egerisk0ocp.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
+
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
+    private void signIn() {
+        Intent intent = googleSignInClient.getSignInIntent();
+        startActivityForResult(intent, RC_SIGN_IN);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
+            try {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuth(account.getIdToken());
+            } catch (ApiException e) {
+                // Handle ApiException
             }
-            return false;
+        }
+    }
+
+    private void firebaseAuth(String idToken) {
+        getAllData();
+        daoLoginWithGoogle.firebaseAuth(idToken, auth, idList, emailList, new DAOLoginWithGoogle.FirebaseAuthCallback() {
+            @Override
+            public void onSuccess() {
+                Intent intent = new Intent(LoginActivity.this, HomePage.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onFailure() {
+                Toast.makeText(LoginActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -226,11 +268,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Toast.makeText(mContext, "Đăng nhập thành công. Đang chuyển đến trang chủ!", Toast.LENGTH_SHORT).show();
 
-        progressBar.setVisibility(View.VISIBLE);
-
         new Handler().postDelayed(() -> {
-            progressBar.setVisibility(View.GONE);
-
             Intent intent = new Intent(LoginActivity.this, HomePage.class);
             startActivity(intent);
 

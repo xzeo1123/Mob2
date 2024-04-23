@@ -85,11 +85,11 @@
         android:text="Forget Password ?"
         android:layout_marginTop="8dp"/>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonGoogleLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone" />
+        android:layout_marginTop="8dp"
+        android:text="Login with Google" />
 
 </LinearLayout>
