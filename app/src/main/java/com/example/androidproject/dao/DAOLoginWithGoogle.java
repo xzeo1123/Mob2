@@ -33,7 +33,6 @@ public class DAOLoginWithGoogle extends AppCompatActivity {
                         assert user != null;
                         String email = user.getEmail();
                         if (!emailList.contains(email)) {
-
                             int marking = createMarkId(idList);
 
                             LocalDate currentDate = LocalDate.now();
