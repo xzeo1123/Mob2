@@ -52,6 +52,7 @@ public class UserLoginActivity extends AppCompatActivity {
     GoogleSignInClient googleSignInClient;
     private final DAOLoginWithGoogle daoLoginWithGoogle = new DAOLoginWithGoogle();
     private final int RC_SIGN_IN = 40;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +107,10 @@ public class UserLoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        btnGoogleLogin.setOnClickListener(v -> signIn());
+        btnGoogleLogin.setOnClickListener(v -> {
+            signIn();
+            getAllData();
+        });
     }
 
     private void mappingComponent() {
@@ -145,7 +149,7 @@ public class UserLoginActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == RC_SIGN_IN) {
+        if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
 
             try {
@@ -157,8 +161,7 @@ public class UserLoginActivity extends AppCompatActivity {
     }
 
     private void firebaseAuth(String idToken) {
-        getAllData();
-        daoLoginWithGoogle.firebaseAuth(idToken, auth, idList, emailList, new DAOLoginWithGoogle.FirebaseAuthCallback() {
+        new Handler().postDelayed(() -> daoLoginWithGoogle.firebaseAuth(idToken, auth, idList, emailList, new DAOLoginWithGoogle.FirebaseAuthCallback() {
             @Override
             public void onSuccess() {
                 Intent intent = new Intent(UserLoginActivity.this, UserHomeActivity.class);
@@ -169,8 +172,9 @@ public class UserLoginActivity extends AppCompatActivity {
             public void onFailure() {
                 Toast.makeText(UserLoginActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
             }
-        });
+        }), 2000);
     }
+
 
     private void setupComponent() {
         cbStorePassword.setChecked(true);
