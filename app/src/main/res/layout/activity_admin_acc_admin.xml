@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminAccAdminActivity">
-
-    <ImageButton
-        android:id="@+id/imageButtonBack"
-        android:layout_width="26dp"
-        android:layout_height="22dp"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:text="Account Management"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
-
-    <HorizontalScrollView
+    tools:context=".AdminAccAdminActivity"
+    android:orientation="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="56dp"
-        tools:ignore="MissingConstraints">
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/imageButtonBack"
+            android:layout_width="26dp"
+            android:layout_height="22dp"
+            app:srcCompat="@drawable/back"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="22dp"
+            tools:ignore="ContentDescription,MissingConstraints"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Account Management"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="64dp"
+            tools:layout_editor_absoluteY="22dp"
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -45,8 +43,8 @@
                 android:text="Admin"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
+                tools:ignore="ButtonStyle,HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
 
             <Button
                 android:layout_width="194dp"
@@ -55,129 +53,22 @@
                 android:text="User"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
+                tools:ignore="ButtonStyle,HardcodedText"
+                tools:layout_editor_absoluteY="18dp" />
         </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:layout_width="54dp"
-        android:layout_height="22dp"
-        android:text="Admin1"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <HorizontalScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="145dp"
-        tools:ignore="MissingConstraints">
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adminAccRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="148dp"
-                android:layout_height="wrap_content"
-                android:text="acb123@gmail.com"
-                android:textSize="12sp"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="1234656@"
-                android:textSize="12sp"
-                tools:ignore="ButtonStyle,HardcodedText"
-                tools:layout_editor_absoluteY="18dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Edit"
-                android:textSize="12sp"
-                tools:ignore="ButtonStyle,HardcodedText"
-                tools:layout_editor_absoluteY="18dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delete"
-                android:textSize="12sp"
-                tools:ignore="ButtonStyle,HardcodedText"
-                tools:layout_editor_absoluteY="18dp" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:layout_width="54dp"
-        android:layout_height="22dp"
-        android:text="Admin2"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="210dp" />
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="235dp"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="148dp"
-                android:layout_height="wrap_content"
-                android:text="acb1234@gmail.com"
-                android:textSize="12sp"
-                tools:layout_editor_absoluteY="18dp"
-                tools:ignore="ButtonStyle,HardcodedText"/>
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="1234656@"
-                android:textSize="12sp"
-                tools:ignore="ButtonStyle,HardcodedText"
-                tools:layout_editor_absoluteY="18dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Edit"
-                android:textSize="12sp"
-                tools:ignore="ButtonStyle,HardcodedText"
-                tools:layout_editor_absoluteY="18dp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delete"
-                android:textSize="12sp"
-                tools:ignore="ButtonStyle,HardcodedText"
-                tools:layout_editor_absoluteY="18dp" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <Button
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:text="ADD"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="626dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
