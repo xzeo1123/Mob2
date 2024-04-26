@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,11 +18,10 @@ import com.example.androidproject.entity.Account;
 
 public class UserChangePassActivity extends AppCompatActivity {
     private EditText txtOldPass, txtNewPass, txtConfirmPass;
-    private TextView txtEmail;
     private Button btnUpdate;
     private Context mContext;
     private final DAOUpdateInfo daoUpdateInfo = new DAOUpdateInfo();
-    private AccountDAO accountDAO;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +32,10 @@ public class UserChangePassActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        mappingComponent();
+
+        btnUpdate.setOnClickListener(v -> updateInfo());
     }
 
     private void mappingComponent() {
@@ -41,20 +43,9 @@ public class UserChangePassActivity extends AppCompatActivity {
         txtNewPass = findViewById(R.id.editTextNewPassword);
         txtConfirmPass = findViewById(R.id.editTextConfirmPassword);
 
-        //txtEmail = findViewById(R.id.textViewEmail);
-
         btnUpdate = findViewById(R.id.buttonUpdatePassword);
 
         mContext = this;
-    }
-
-    private void getSQLiteData() {
-        accountDAO = new AccountDAO(mContext);
-        boolean check = accountDAO.checkExistAccount();
-        if (check) {
-            Account account = accountDAO.getAccount();
-            txtEmail.setText(account.getEmail());
-        }
     }
 
     private void updateInfo() {
@@ -62,7 +53,7 @@ public class UserChangePassActivity extends AppCompatActivity {
         String newPass = String.valueOf(txtNewPass.getText());
         String confirmPass = String.valueOf(txtConfirmPass.getText());
 
-        accountDAO = new AccountDAO(mContext);
+        AccountDAO accountDAO = new AccountDAO(mContext);
         Account account = accountDAO.getAccount();
 
         boolean flagCheckOldPass = checkOldPass(oldPass, account);
