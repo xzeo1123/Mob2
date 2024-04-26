@@ -126,10 +126,12 @@ public class UserRestorePassActivity extends AppCompatActivity {
         }
 
         String newPassword = generateRandomString();
+        MD5 md5 = new MD5();
+        String md5Pass = md5.md5(newPassword);
         int position = emailList.indexOf(getEmail);
         String sid = String.valueOf(idList.get(position));
 
-        daoRestorePassword.updatePassword(sid, newPassword);
+        daoRestorePassword.updatePassword(sid, md5Pass);
 
         sendNewPassToEmail(getEmail, newPassword);
         Toast.makeText(mContext, "Mật khẩu mới đã được gửi về email " + getEmail + "!", Toast.LENGTH_SHORT).show();

@@ -268,7 +268,9 @@ public class UserLoginActivity extends AppCompatActivity {
 
         int position = emailList.indexOf(getEmail);
         String storedPassword = String.valueOf((passwordList.get(position)));
-        if (!getPassword.equals(storedPassword)) {
+        MD5 md5 = new MD5();
+        String md5Pass = md5.md5(storedPassword);
+        if (!getPassword.equals(md5Pass)) {
             Toast.makeText(mContext, "Sai tên đăng nhập hoặc mật khẩu!", Toast.LENGTH_SHORT).show();
             txtForgotPass.requestFocus();
             return;

@@ -18,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.androidproject.dao.DAOSignup;
 import com.example.androidproject.entity.Account;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -164,7 +166,9 @@ public class UserRegisterActivity extends AppCompatActivity {
         String formattedDate = currentDate.format(formatter);
 
         Account ac;
-        ac = new Account(marking, getEmail, getPassword, 0, randomcode, "NAME", formattedDate, false);
+        MD5 md5 = new MD5();
+        String md5Pass = md5.md5(getPassword);
+        ac = new Account(marking, getEmail, md5Pass, 0, randomcode, "NAME", formattedDate, false);
         daoSignup.addAccount(marking, ac);
 
         sendCodeToEmail(getEmail, randomcode);

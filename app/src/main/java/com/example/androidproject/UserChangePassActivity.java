@@ -53,10 +53,13 @@ public class UserChangePassActivity extends AppCompatActivity {
         String newPass = String.valueOf(txtNewPass.getText());
         String confirmPass = String.valueOf(txtConfirmPass.getText());
 
+        MD5 md5 = new MD5();
+        String md5OldPass = md5.md5(oldPass);
+
         AccountDAO accountDAO = new AccountDAO(mContext);
         Account account = accountDAO.getAccount();
 
-        boolean flagCheckOldPass = checkOldPass(oldPass, account);
+        boolean flagCheckOldPass = checkOldPass(md5OldPass, account);
         if(!flagCheckOldPass) {
             Toast.makeText(mContext, "Mật khẩu cũ không chính xác!", Toast.LENGTH_SHORT).show();
             txtOldPass.requestFocus();
@@ -77,7 +80,9 @@ public class UserChangePassActivity extends AppCompatActivity {
             return;
         }
 
-        account.setPassword(newPass);
+        String md5NewPass = md5.md5(newPass);
+
+        account.setPassword(md5NewPass);
 
         daoUpdateInfo.UpdateInfo(account.getAccountID(), account);
         accountDAO.addAccount(account, true);
