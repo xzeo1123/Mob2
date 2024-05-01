@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.androidproject.IRecycleView.IRecycleViewAdminAcc;
 import com.example.androidproject.entity.AdminAccount;
 
 import androidx.annotation.NonNull;
@@ -26,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AdminAccAdminActivity extends AppCompatActivity {
+public class AdminAccAdminActivity extends AppCompatActivity implements IRecycleViewAdminAcc {
     public ArrayList<AdminAccount> adminAccountArrayList = new ArrayList<>();
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference("AdmAccount");
@@ -40,7 +41,7 @@ public class AdminAccAdminActivity extends AppCompatActivity {
         RecyclerView adminAccRecyclerView = findViewById(R.id.adminAccRecyclerView);
 
 
-        AAdmin_RecyclerViewAdapter adapter = new AAdmin_RecyclerViewAdapter(this, adminAccountArrayList);
+        AAdmin_RecyclerViewAdapter adapter = new AAdmin_RecyclerViewAdapter(this, adminAccountArrayList, this);
         adminAccRecyclerView.setAdapter(adapter);
         adminAccRecyclerView.setLayoutManager(new LinearLayoutManager((this)));
     }
@@ -50,20 +51,13 @@ public class AdminAccAdminActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Integer accountID = snapshot.child("AccountID").getValue(Integer.class);
-                    String email = snapshot.child("Email").getValue(String.class);
-                    String password = snapshot.child("Password").getValue(String.class);
-                    String displayName = snapshot.child("DisplayName").getValue(String.class);
-                    String doB = snapshot.child("DoB").getValue(String.class);
-                    String role = snapshot.child("Role").getValue(String.class);
-                    Log.i("TEstttttttttttttt", accountID + " " + email + " " + password + " " + displayName + " " + doB + " " + role);
                     AdminAccount adminAccount = new AdminAccount();
-                    adminAccount.AccountID = accountID;
-                    adminAccount.Email = email;
-                    adminAccount.Password = password;
-                    adminAccount.DisplayName = displayName;
-                    adminAccount.DoB = doB;
-                    adminAccount.Role = role;
+                    adminAccount.AccountID = snapshot.child("AccountID").getValue(Integer.class);;
+                    adminAccount.Email = snapshot.child("Email").getValue(String.class);;
+                    adminAccount.Password = snapshot.child("Password").getValue(String.class);;
+                    adminAccount.DisplayName = snapshot.child("DisplayName").getValue(String.class);;
+                    adminAccount.DoB = snapshot.child("DoB").getValue(String.class);;
+                    adminAccount.Role = snapshot.child("Role").getValue(String.class);;
 
 
                     adminAccountArrayList.add(adminAccount);
@@ -78,8 +72,14 @@ public class AdminAccAdminActivity extends AppCompatActivity {
     }
     private void updateRecyclerView() {
         RecyclerView adminAccRecyclerView = findViewById(R.id.adminAccRecyclerView);
-        AAdmin_RecyclerViewAdapter adapter = new AAdmin_RecyclerViewAdapter(this, adminAccountArrayList);
+        AAdmin_RecyclerViewAdapter adapter = new AAdmin_RecyclerViewAdapter(this, adminAccountArrayList, this);
         adminAccRecyclerView.setAdapter(adapter);
         adminAccRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public void onClickResetPassword(int position) {
+        AdminAccount adminAccount = adminAccountArrayList.get(position);
+        Log.i("Dataaaaaaaaa", adminAccount.DisplayName + " " + adminAccount.Password + " " + adminAccount.Email + " " + adminAccount.DoB + " " + adminAccount.Role + " " + adminAccount.AccountID);
     }
 }
