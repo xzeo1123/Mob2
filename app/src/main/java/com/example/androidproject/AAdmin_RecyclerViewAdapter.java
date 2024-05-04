@@ -36,8 +36,7 @@ public class AAdmin_RecyclerViewAdapter extends RecyclerView.Adapter<AAdmin_Recy
 
     @Override
     public void onBindViewHolder(@NonNull AAdmin_RecyclerViewAdapter.MyViewHolder holder, int position) {
-
-        holder.tvEmail.setText(adminAccountArrayList.get(position).getEmail());
+        holder.tvEmail.setText(adminAccountArrayList.get(position).getDisplayName());
     }
 
     @Override
@@ -51,7 +50,7 @@ public class AAdmin_RecyclerViewAdapter extends RecyclerView.Adapter<AAdmin_Recy
             super(itemView);
             tvEmail = itemView.findViewById(R.id.recyclerEmail);
 
-            itemView.findViewById(R.id.btnResetPassword).setOnClickListener(new View.OnClickListener() {
+            itemView.findViewById(R.id.btnDetail).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (iRecycleViewAdminAcc != null){

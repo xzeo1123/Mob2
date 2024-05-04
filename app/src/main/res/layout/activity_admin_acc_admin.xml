@@ -1,56 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:id="@+id/main"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminAccAdminActivity">
 
-    <ImageButton
-        android:id="@+id/buttonBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@null"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back_button"
-        android:importantForAccessibility="no" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="38dp"
-        android:text="Account Management"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036"
-        tools:ignore="HardcodedText" />
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        >
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.037"
+            app:srcCompat="@drawable/back_button"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Account Management"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.774"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.036"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
             <Button
                 android:layout_width="217dp"
@@ -71,125 +77,22 @@
                 android:textStyle="bold"
                 tools:ignore="ButtonStyle,HardcodedText"
                 tools:layout_editor_absoluteY="18dp" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="54dp"
-        android:layout_height="22dp"
-        android:text="Admin1"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:layout_width="148dp"
-            android:layout_height="wrap_content"
-            android:text="acb123@gmail.com"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
-
-        <TextView
-            android:layout_width="88dp"
-            android:layout_height="wrap_content"
-            android:text="1234656@"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="54dp"
-        android:layout_height="22dp"
-        android:text="Admin2"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="316dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        android:layout_width="match_parent"
+        android:layout_height="580dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adminAccRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
 
-        <TextView
-            android:layout_width="148dp"
-            android:layout_height="wrap_content"
-            android:text="acb123"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
-
-        <TextView
-            android:layout_width="88dp"
-            android:layout_height="wrap_content"
-            android:text="1234656@"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"
-            android:textSize="12sp"
-            tools:ignore="ButtonStyle,HardcodedText"
-            tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>
 
     <Button
@@ -204,5 +107,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9"
         tools:ignore="HardcodedText,MissingConstraints" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

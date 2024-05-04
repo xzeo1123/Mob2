@@ -75,11 +75,14 @@ public class AdminAccAdminActivity extends AppCompatActivity implements IRecycle
         AAdmin_RecyclerViewAdapter adapter = new AAdmin_RecyclerViewAdapter(this, adminAccountArrayList, this);
         adminAccRecyclerView.setAdapter(adapter);
         adminAccRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-    @Override
+        }
+        @Override
     public void onClickResetPassword(int position) {
         AdminAccount adminAccount = adminAccountArrayList.get(position);
+        //Check this part is null or not
+        Intent intent = new Intent(AdminAccAdminActivity.this, AdminAAccDetail.class);
+        intent.putExtra("adminAccount", adminAccount);
+        startActivity(intent);
         Log.i("Dataaaaaaaaa", adminAccount.DisplayName + " " + adminAccount.Password + " " + adminAccount.Email + " " + adminAccount.DoB + " " + adminAccount.Role + " " + adminAccount.AccountID);
     }
 }

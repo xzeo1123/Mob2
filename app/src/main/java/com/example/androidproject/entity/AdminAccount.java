@@ -1,6 +1,8 @@
 package com.example.androidproject.entity;
 
-public class AdminAccount {
+import java.io.Serializable;
+
+public class AdminAccount implements Serializable {
     public int AccountID;
     public String DisplayName;
     public String DoB;

@@ -20,7 +20,8 @@ public class AdminHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_home);
         Intent intentValues = getIntent();
         userName = findViewById(R.id.txtUserName);
-        userName.setText(intentValues.getStringExtra("userName"));
+        String userText = ("Hello, " + intentValues.getStringExtra("userName"));
+        userName.setText(userText);
 
         //      Button to Admins
         Button btnToAdmin = findViewById(R.id.btnToAdmin);

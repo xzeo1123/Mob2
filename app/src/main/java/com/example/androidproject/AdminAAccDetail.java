@@ -1,6 +1,8 @@
 package com.example.androidproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.androidproject.entity.AdminAccount;
+
 public class AdminAAccDetail extends AppCompatActivity {
+    private TextView txtAccountId;
+    private TextView txtDisplayName;
+    private TextView txtEmail;
+    private TextView txtDOB;
+    private TextView txtRole;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +29,21 @@ public class AdminAAccDetail extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Intent intent = getIntent();
+        AdminAccount adminAccount = (AdminAccount) intent.getSerializableExtra("adminAccount");
+        txtAccountId = findViewById(R.id.txtaccountid);
+        txtDisplayName = findViewById(R.id.txtdisplayname);
+        txtEmail = findViewById(R.id.txtemail);
+        txtDOB = findViewById(R.id.txtdob);
+        txtRole = findViewById(R.id.txtrole);
+
+        assert adminAccount != null;
+        txtAccountId.setText(String.valueOf(adminAccount.AccountID));
+        txtDisplayName.setText(adminAccount.DisplayName);
+        txtEmail.setText(adminAccount.Email);
+        txtDOB.setText(adminAccount.DoB);
+        txtRole.setText(adminAccount.Role);
+
 
 
 

@@ -16,9 +16,10 @@
             android:layout_height="wrap_content"
             android:text="@string/adminaccountId" />
         <TextView
+            android:id="@+id/txtaccountid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/adminaccountId" />
+            />
 
     </LinearLayout>
     <LinearLayout
@@ -30,9 +31,10 @@
             android:layout_height="wrap_content"
             android:text="@string/adminaccountDisplayname" />
         <TextView
+            android:id="@+id/txtdisplayname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/adminaccountDisplayname" />
+             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,9 +45,10 @@
             android:layout_height="wrap_content"
             android:text="@string/adminaccountDob" />
         <TextView
+            android:id="@+id/txtdob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/adminaccountDob" />
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,9 +59,10 @@
             android:layout_height="wrap_content"
             android:text="@string/adminaccountEmail" />
         <TextView
+            android:id="@+id/txtemail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/adminaccountEmail" />
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,9 +73,10 @@
             android:layout_height="wrap_content"
             android:text="@string/adminaccountRole" />
         <TextView
+            android:id="@+id/txtrole"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/adminaccountRole" />
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
