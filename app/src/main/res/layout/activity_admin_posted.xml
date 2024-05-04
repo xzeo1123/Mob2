@@ -8,32 +8,60 @@
     tools:context=".AdminPostedActivity">
 
     <ImageButton
-        android:id="@+id/imageButtonBack"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        app:srcCompat="@drawable/next"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/back_button"
+        android:importantForAccessibility="no" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
         android:text="Posted"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/buttonNewMg"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="New Manga"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="78dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
             android:layout_width="match_parent"
@@ -45,7 +73,7 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Naruto"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
@@ -55,9 +83,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="78dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
             android:layout_width="match_parent"
@@ -69,7 +100,7 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Shin"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
@@ -79,9 +110,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables"
-        tools:layout_editor_absoluteX="272dp"
-        tools:layout_editor_absoluteY="78dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
             android:layout_width="match_parent"
@@ -93,19 +128,23 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Conan"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="277dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
             android:layout_width="match_parent"
@@ -117,17 +156,9 @@
             android:layout_width="109dp"
             android:layout_height="18dp"
             android:text="Doraemon"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonNewManga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Manga"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="271dp"
-        tools:layout_editor_absoluteY="7dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

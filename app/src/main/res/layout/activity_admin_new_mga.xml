@@ -8,141 +8,164 @@
     tools:context=".AdminNewMgaActivity">
 
     <ImageButton
-        android:id="@+id/imageButtonBack"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        app:srcCompat="@drawable/next"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,MissingConstraints"/>
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/back_button"
+        android:importantForAccessibility="no" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
         android:text="New Manga"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="22dp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonContinue"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Continue"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="271dp"
-        tools:layout_editor_absoluteY="7dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
-    <ImageView
+
+    <ImageButton
+        android:id="@+id/buttonAdd"
         android:layout_width="117dp"
         android:layout_height="161dp"
-        app:srcCompat="@drawable/add"
-        tools:ignore="ContentDescription,MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="67dp" />
+        android:layout_gravity="center"
+        android:background="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124"
+        android:importantForAccessibility="no" />
 
     <TextView
-        android:id="@+id/introMga1"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add a cover"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="137dp" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        tools:ignore="DuplicateIds,MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="501dp" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        tools:ignore="DuplicateIds,MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="289dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <EditText
-        android:layout_width="374dp"
-        android:layout_height="42dp"
-        android:text="Title of Manga"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="249dp" />
-
-    <EditText
-        android:layout_width="374dp"
-        android:layout_height="40dp"
-        android:text="Detail"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="323dp" />
-
-    <EditText
-        android:layout_width="373dp"
-        android:layout_height="35dp"
+        android:id="@+id/editText"
+        android:layout_width="388dp"
+        android:layout_height="75dp"
         android:text="Category"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="466dp" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        tools:ignore="DuplicateIds,MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="363dp" />
-
-    <View
-        android:id="@+id/line"
-        android:layout_width="390dp"
-        android:layout_height="1dp"
-        android:background="#FFD646"
-        tools:ignore="DuplicateIds,MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="430dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <EditText
-        android:layout_width="373dp"
-        android:layout_height="42dp"
-        android:text="Tag"
-        android:textSize="14sp"
+        android:id="@+id/editText2"
+        android:layout_width="388dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="444dp"
+        android:text="Title of Manga"
+        android:textSize="16sp"
         android:textStyle="bold"
-        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.869"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdd"
+        app:layout_constraintVertical_bias="0.428"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="388dp"
+        android:layout_height="75dp"
+        android:text="Detail"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="388dp"
+        android:layout_height="75dp"
+        android:text="Tag"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.582"
+        tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <FrameLayout
         android:layout_width="225dp"
         android:layout_height="126dp"
         android:background="#D0DAFE"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="530dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884"
+        tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:layout_width="match_parent"
+        <ImageButton
+            android:layout_width="155dp"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/add"
-            tools:ignore="ContentDescription,MissingConstraints" />
+            android:layout_gravity="center"
+            android:background="@null"
+            android:importantForAccessibility="no"
+            android:scaleType="fitXY"
+            android:src="@drawable/add"
+            tools:layout_editor_absoluteX="93dp"
+            tools:layout_editor_absoluteY="472dp" />
+
     </FrameLayout>
 
     <TextView
@@ -150,8 +173,13 @@
         android:layout_height="wrap_content"
         android:text="ADD NEW CHAP"
         android:textSize="14sp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="656dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.929"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

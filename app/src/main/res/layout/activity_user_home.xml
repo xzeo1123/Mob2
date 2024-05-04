@@ -8,156 +8,92 @@
     tools:context=".UserHomeActivity">
 
     <SearchView
+        android:id="@+id/searchView"
         android:layout_width="300dp"
         android:layout_height="30dp"
+        android:layout_marginStart="8dp"
         android:queryHint="Search..."
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="18dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toEndOf="@+id/imageUser"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02"
+        tools:ignore="MissingConstraints" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageUser"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        app:srcCompat="@drawable/avt_user"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019"
+        app:srcCompat="@drawable/avt_user" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageNotify"
-        android:layout_width="26dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/bell"
-        tools:layout_editor_absoluteX="369dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toEndOf="@+id/searchView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021"
+        app:srcCompat="@drawable/bell" />
 
     <ImageView
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="240dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.128"
         app:srcCompat="@drawable/mg1"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="69dp"
+        android:scaleType="fitXY"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <ImageButton
-        android:layout_width="25dp"
-        android:layout_height="28dp"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="169dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
 
-    <ImageButton
-        android:layout_width="25dp"
-        android:layout_height="28dp"
-        app:srcCompat="@drawable/next"
-        tools:layout_editor_absoluteX="386dp"
-        tools:layout_editor_absoluteY="169dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
-    <!-- Hot -->
     <TextView
         android:layout_width="80dp"
         android:layout_height="25dp"
         android:text="Hot🔥"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.429"
         tools:ignore="HardcodedText,MissingConstraints" />
 
-    <ImageButton
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/next"
-        tools:layout_editor_absoluteX="369dp"
-        tools:layout_editor_absoluteY="325dp"
-        tools:ignore="ContentDescription,DuplicateIds,MissingConstraints" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="355dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg1_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Naruto"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="355dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg2_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Conan"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="355dp"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg4_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Shin"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <!-- most Viewed -->
     <TextView
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:text="Most Viewed"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="558dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <LinearLayout
@@ -165,23 +101,32 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="591dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597"
         tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg4_1"
+            android:layout_width="117dp"
+            android:layout_height="160dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.628"
+            app:srcCompat="@drawable/mg1_1"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="109dp"
             android:layout_height="18dp"
-            android:text="Shin"
+            android:text="Naruto"
             android:textSize="14sp"
             tools:ignore="HardcodedText" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -189,8 +134,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="591dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.601"
         tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
@@ -213,13 +162,77 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="2dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="591dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.601"
         tools:ignore="MissingConstraints,UseCompoundDrawables">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="155dp"
+            app:srcCompat="@drawable/mg4_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Shin"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg4_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Shin"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.983"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="117dp"
+            android:layout_height="160dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.628"
             app:srcCompat="@drawable/mg1_1"
             tools:ignore="ContentDescription" />
 
@@ -229,15 +242,33 @@
             android:text="Naruto"
             android:textSize="14sp"
             tools:ignore="HardcodedText" />
-
     </LinearLayout>
 
-    <ImageButton
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:srcCompat="@drawable/next"
-        tools:layout_editor_absoluteX="369dp"
-        tools:layout_editor_absoluteY="563dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/mg2_1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:layout_width="109dp"
+            android:layout_height="18dp"
+            android:text="Conan"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
