@@ -1,10 +1,12 @@
 package com.example.androidproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,8 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
     private EditText txtFullName;
     private TextView txtDob, txtMoney, txtVip;
     private DatePicker datePicker;
-    private Button btnPick, btnBank, btnBuy, btnUpdate;
+    private Button btnPick, btnActivate, btnBuy, btnUpdate;
+    private ImageButton btnBack;
     private Context mContext;
     private final DAOUpdateInfo daoUpdateInfo = new DAOUpdateInfo();
     private AccountDAO accountDAO;
@@ -40,16 +43,17 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
 
         mappingComponent();
 
-
         getSQLiteData();
 
         btnPick.setOnClickListener(v -> openDatePicker());
 
         btnUpdate.setOnClickListener(v -> updateInfo());
 
-        btnBank.setOnClickListener(v -> TransfertopageBanking());
+        btnBuy.setOnClickListener(v -> TransferToBuy());
 
-        btnBuy.setOnClickListener(v -> TransfertopageBanking());
+        btnActivate.setOnClickListener(v -> TransferToActivateVIP());
+
+        btnBack.setOnClickListener(v -> goToUser());
     }
 
     private void mappingComponent() {
@@ -62,9 +66,11 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
         datePicker = findViewById(R.id.datePicker);
 
         btnPick = findViewById(R.id.buttonPickDate);
-        btnBank = findViewById(R.id.buttonBank);
         btnBuy = findViewById(R.id.buttonBuy);
+        btnActivate = findViewById(R.id.buttonActivate);
         btnUpdate = findViewById(R.id.buttonUpdate);
+
+        btnBack = findViewById(R.id.buttonBack);
 
         mContext = this;
     }
@@ -135,7 +141,17 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
         return fullName.equals("");
     }
 
-    private void TransfertopageBanking() {
+    private void TransferToBuy() {
+        Intent intent = new Intent(UserUpdateInfoActivity.this, UserPaymentActivity.class);
+        startActivity(intent);
+    }
 
+    private void TransferToActivateVIP() {
+
+    }
+
+    private void goToUser() {
+        Intent intent = new Intent(UserUpdateInfoActivity.this, UserAfter.class);
+        startActivity(intent);
     }
 }

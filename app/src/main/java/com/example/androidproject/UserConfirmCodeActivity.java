@@ -47,10 +47,7 @@ public class UserConfirmCodeActivity extends AppCompatActivity {
 
         btnConfirm.setOnClickListener(v -> checkCode());
 
-        btnBack.setOnClickListener(v -> {
-            Intent intent = new Intent(UserConfirmCodeActivity.this, UserLoginActivity.class);
-            startActivity(intent);
-        });
+        btnBack.setOnClickListener(v -> goBack());
     }
 
     private void mappingComponent() {
@@ -138,5 +135,10 @@ public class UserConfirmCodeActivity extends AppCompatActivity {
 
     private boolean checkEmptyEmail(String email) {
         return (email == null || email.equals(""));
+    }
+
+    private void goBack() {
+        Intent intent = new Intent(UserConfirmCodeActivity.this, UserLoginActivity.class);
+        startActivity(intent);
     }
 }

@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".UserConfirmCodeActivity">
 
-
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"

@@ -18,8 +18,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.androidproject.dao.DAOSignup;
 import com.example.androidproject.entity.Account;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -64,10 +62,7 @@ public class UserRegisterActivity extends AppCompatActivity {
 
         btnSignup.setOnClickListener(v -> signUp());
 
-        btnBack.setOnClickListener(v -> {
-            Intent intent = new Intent(UserRegisterActivity.this, UserLoginActivity.class);
-            startActivity(intent);
-        });
+        btnBack.setOnClickListener(v -> goToLogin());
     }
 
     private void mappingComponent() {
@@ -166,8 +161,7 @@ public class UserRegisterActivity extends AppCompatActivity {
         String formattedDate = currentDate.format(formatter);
 
         Account ac;
-        MD5 md5 = new MD5();
-        String md5Pass = md5.md5(getPassword);
+        String md5Pass = MD5.md5(getPassword);
         ac = new Account(marking, getEmail, md5Pass, 0, randomcode, "NAME", formattedDate, false);
         daoSignup.addAccount(marking, ac);
 
@@ -256,5 +250,10 @@ public class UserRegisterActivity extends AppCompatActivity {
         } catch (MessagingException e) {
             e.printStackTrace();
         }
+    }
+
+    private void goToLogin() {
+        Intent intent = new Intent(UserRegisterActivity.this, UserLoginActivity.class);
+        startActivity(intent);
     }
 }

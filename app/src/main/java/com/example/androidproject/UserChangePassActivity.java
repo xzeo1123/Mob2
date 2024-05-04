@@ -1,9 +1,11 @@
 package com.example.androidproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -21,6 +23,7 @@ public class UserChangePassActivity extends AppCompatActivity {
     private Button btnUpdate;
     private Context mContext;
     private final DAOUpdateInfo daoUpdateInfo = new DAOUpdateInfo();
+    private ImageButton btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,8 @@ public class UserChangePassActivity extends AppCompatActivity {
         mappingComponent();
 
         btnUpdate.setOnClickListener(v -> updateInfo());
+
+        btnBack.setOnClickListener(v -> goBackToUser());
     }
 
     private void mappingComponent() {
@@ -45,6 +50,8 @@ public class UserChangePassActivity extends AppCompatActivity {
 
         btnUpdate = findViewById(R.id.buttonUpdatePassword);
 
+        btnBack = findViewById(R.id.buttonBack);
+
         mContext = this;
     }
 
@@ -53,8 +60,7 @@ public class UserChangePassActivity extends AppCompatActivity {
         String newPass = String.valueOf(txtNewPass.getText());
         String confirmPass = String.valueOf(txtConfirmPass.getText());
 
-        MD5 md5 = new MD5();
-        String md5OldPass = md5.md5(oldPass);
+        String md5OldPass = MD5.md5(oldPass);
 
         AccountDAO accountDAO = new AccountDAO(mContext);
         Account account = accountDAO.getAccount();
@@ -80,7 +86,7 @@ public class UserChangePassActivity extends AppCompatActivity {
             return;
         }
 
-        String md5NewPass = md5.md5(newPass);
+        String md5NewPass = MD5.md5(newPass);
 
         account.setPassword(md5NewPass);
 
@@ -103,6 +109,11 @@ public class UserChangePassActivity extends AppCompatActivity {
 
     private boolean checkEmptyNewPass(String pass) {
         return (pass == null || pass.equals(""));
+    }
+
+    private void goBackToUser() {
+        Intent intent = new Intent(UserChangePassActivity.this, UserAfter.class);
+        startActivity(intent);
     }
 
 }

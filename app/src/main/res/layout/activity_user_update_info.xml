@@ -38,7 +38,7 @@
         android:id="@+id/textView"
         android:layout_width="200dp"
         android:layout_height="38dp"
-        android:text="Update Info"
+        android:text="Back to user"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +69,7 @@
             android:text="Full Name"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:gravity="center_vertical"
             tools:ignore="HardcodedText" />
 
         <EditText
@@ -98,6 +100,7 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:gravity="center_vertical"
             android:text="DoB"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -105,8 +108,9 @@
 
         <TextView
             android:id="@+id/textViewDob"
-            android:layout_width="123dp"
+            android:layout_width="170dp"
             android:layout_height="50dp"
+            android:gravity="center_vertical"
             android:text="1/1/2001"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -147,32 +151,35 @@
             android:text="Money"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:gravity="center_vertical"
             tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/textViewMoney"
-            android:layout_width="190dp"
+            android:layout_width="170dp"
             android:layout_height="50dp"
             android:text="Input money goes here"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:gravity="center_vertical"
             tools:ignore="HardcodedText" />
 
         <Button
-            android:id="@+id/buttonBank"
+            android:id="@+id/buttonBuy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bank" />
+            android:text="Buy"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout10"
-        android:layout_width="407dp"
+        android:layout_width="match_parent"
         android:layout_height="97dp"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -187,22 +194,24 @@
             android:text="VIP"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:gravity="center_vertical"
             tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/textViewVip"
-            android:layout_width="190dp"
+            android:layout_width="170dp"
             android:layout_height="50dp"
             android:text="Input VIP goes here"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:gravity="center_vertical"
             tools:ignore="HardcodedText" />
 
         <Button
-            android:id="@+id/buttonBuy"
+            android:id="@+id/buttonActivate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Buy"
+            android:text="Activate"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>

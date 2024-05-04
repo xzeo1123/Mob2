@@ -17,93 +17,74 @@
         android:theme="@style/Theme.AndroidProject"
         tools:targetApi="31">
         <activity
+            android:name=".UserPaymentActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserUpdateInfoActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserConfirmCodeActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserChangePassActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserRestorePassActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminAccUserActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminAccAdminActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminEditMGaActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminWriteMgaActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminNewMgaActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminPostedActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminHomeActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AdminLoginActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".BCReadingActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".BCFavorActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".BCListActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ChapterActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".DetailMgaActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".WriteCmtActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserBeforeActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserAfter"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserHomeActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserRegisterActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UserLoginActivity"
             android:exported="true">
@@ -115,8 +96,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

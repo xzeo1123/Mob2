@@ -78,34 +78,11 @@ public class UserLoginActivity extends AppCompatActivity {
 
         btnLogin.setOnClickListener(v -> checkLogin());
 
-        txtSignup.setOnClickListener(v -> {
-            Intent intent = new Intent(UserLoginActivity.this, UserRegisterActivity.class);
-            startActivity(intent);
-        });
+        txtSignup.setOnClickListener(v -> goToSignup());
 
-        txtConfirm.setOnClickListener(v -> {
-            String email;
-            try {
-                email = String.valueOf(etxtEmail.getText());
-            } catch (NullPointerException e) {
-                email = "";
-            }
-            Intent intent = new Intent(UserLoginActivity.this, UserConfirmCodeActivity.class);
-            intent.putExtra("passEmail", email);
-            startActivity(intent);
-        });
+        txtConfirm.setOnClickListener(v -> goToConfirmCode());
 
-        txtForgotPass.setOnClickListener(v -> {
-            String email;
-            try {
-                email = String.valueOf(etxtEmail.getText());
-            } catch (NullPointerException e) {
-                email = "";
-            }
-            Intent intent = new Intent(UserLoginActivity.this, UserRestorePassActivity.class);
-            intent.putExtra("passEmail", email);
-            startActivity(intent);
-        });
+        txtForgotPass.setOnClickListener(v -> goToRestorePass());
 
         btnGoogleLogin.setOnClickListener(v -> {
             signIn();
@@ -174,7 +151,6 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         }), 2000);
     }
-
 
     private void setupComponent() {
         cbStorePassword.setChecked(true);
@@ -268,9 +244,8 @@ public class UserLoginActivity extends AppCompatActivity {
 
         int position = emailList.indexOf(getEmail);
         String storedPassword = String.valueOf((passwordList.get(position)));
-        MD5 md5 = new MD5();
-        String md5Pass = md5.md5(storedPassword);
-        if (!getPassword.equals(md5Pass)) {
+        String md5Pass = MD5.md5(getPassword);
+        if (!storedPassword.equals(md5Pass)) {
             Toast.makeText(mContext, "Sai tên đăng nhập hoặc mật khẩu!", Toast.LENGTH_SHORT).show();
             txtForgotPass.requestFocus();
             return;
@@ -283,7 +258,7 @@ public class UserLoginActivity extends AppCompatActivity {
             return;
         }
 
-        StorePassword(position);
+        StorePassword(position, getPassword);
 
         Toast.makeText(mContext, "Đăng nhập thành công. Đang chuyển đến trang chủ!", Toast.LENGTH_SHORT).show();
 
@@ -295,11 +270,12 @@ public class UserLoginActivity extends AppCompatActivity {
         }, 2000);
     }
 
-    private void StorePassword(int position) {
+    private void StorePassword(int position, String unMD5Pass) {
         int id = idList.get(position);
         daoLogin.getAccountById(id, account -> {
             if (account != null) {
                 accountDAO = new AccountDAO(mContext);
+                account.setPassword(unMD5Pass);
                 accountDAO.addAccount(account, cbStorePassword.isChecked());
             }
         });
@@ -318,5 +294,34 @@ public class UserLoginActivity extends AppCompatActivity {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
+    }
+
+    private void goToSignup() {
+        Intent intent = new Intent(UserLoginActivity.this, UserRegisterActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToConfirmCode() {
+        String email;
+        try {
+            email = String.valueOf(etxtEmail.getText());
+        } catch (NullPointerException e) {
+            email = "";
+        }
+        Intent intent = new Intent(UserLoginActivity.this, UserConfirmCodeActivity.class);
+        intent.putExtra("passEmail", email);
+        startActivity(intent);
+    }
+
+    private void goToRestorePass() {
+        String email;
+        try {
+            email = String.valueOf(etxtEmail.getText());
+        } catch (NullPointerException e) {
+            email = "";
+        }
+        Intent intent = new Intent(UserLoginActivity.this, UserRestorePassActivity.class);
+        intent.putExtra("passEmail", email);
+        startActivity(intent);
     }
 }

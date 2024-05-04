@@ -34,7 +34,6 @@ public class AccountDAO {
             values.put("storeState", storeState);
             db.insert(CreateDatabase.TB_ACCOUNT, null, values);
         } catch (Exception e) {
-            Log.i("WTF", e.toString());
         }
     }
 

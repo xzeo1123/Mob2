@@ -5,16 +5,16 @@ import java.security.NoSuchAlgorithmException;
 
 public class MD5 {
     public static String md5(String pass) {
-        MessageDigest digest = null;
+        MessageDigest digest;
         try {
             digest = MessageDigest.getInstance("md5");
             byte[] result = digest.digest(pass.getBytes());
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             for(byte b: result) {
                 int number = b & 0xff;
                 String hex = Integer.toHexString(number);
                 if(hex.length() == 1) {
-                    sb.append("0"+hex);
+                    sb.append("0").append(hex);
                 } else {
                     sb.append(hex);
                 }

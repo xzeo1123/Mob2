@@ -59,10 +59,7 @@ public class UserRestorePassActivity extends AppCompatActivity {
 
         btnSend.setOnClickListener(v -> sendNewPassword());
 
-        btnBack.setOnClickListener(v -> {
-            Intent intent = new Intent(UserRestorePassActivity.this, UserLoginActivity.class);
-            startActivity(intent);
-        });
+        btnBack.setOnClickListener(v -> goToLogin());
     }
 
     private void mappingComponent() {
@@ -126,8 +123,7 @@ public class UserRestorePassActivity extends AppCompatActivity {
         }
 
         String newPassword = generateRandomString();
-        MD5 md5 = new MD5();
-        String md5Pass = md5.md5(newPassword);
+        String md5Pass = MD5.md5(newPassword);
         int position = emailList.indexOf(getEmail);
         String sid = String.valueOf(idList.get(position));
 
@@ -201,5 +197,10 @@ public class UserRestorePassActivity extends AppCompatActivity {
         } catch (MessagingException e) {
             e.printStackTrace();
         }
+    }
+
+    private void goToLogin() {
+        Intent intent = new Intent(UserRestorePassActivity.this, UserLoginActivity.class);
+        startActivity(intent);
     }
 }
