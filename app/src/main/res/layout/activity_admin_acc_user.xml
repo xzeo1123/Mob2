@@ -141,7 +141,6 @@
             android:layout_height="wrap_content"
             android:text="Delete"
             android:textSize="12sp"
-            android:background="@color/color_delete"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>
@@ -209,7 +208,6 @@
             android:layout_height="wrap_content"
             android:text="Delete"
             android:textSize="12sp"
-            android:background="@color/color_delete"
             tools:ignore="ButtonStyle,HardcodedText"
             tools:layout_editor_absoluteY="18dp" />
     </LinearLayout>

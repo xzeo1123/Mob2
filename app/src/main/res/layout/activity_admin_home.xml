@@ -112,11 +112,13 @@
         android:layout_height="20dp"
         android:text="Admin"
         android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteY="224dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/textView12"
@@ -199,7 +201,7 @@
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.513"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
@@ -208,21 +210,13 @@
         android:layout_height="20dp"
         android:text="Change password"
         android:textSize="12sp"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="386dp" />
-
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/pass_admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.542"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.556"
+        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <ImageView
         android:layout_width="20dp"
@@ -233,7 +227,7 @@
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585"
+        app:layout_constraintVertical_bias="0.599"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
@@ -247,7 +241,20 @@
         app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585"
+        app:layout_constraintVertical_bias="0.599"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/pass_admin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.556"
+        tools:ignore="ContentDescription,MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

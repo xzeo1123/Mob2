@@ -139,14 +139,15 @@
         android:id="@+id/editText4"
         android:layout_width="51dp"
         android:layout_height="34dp"
-        android:layout_marginBottom="400dp"
         android:text="Detail"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <View

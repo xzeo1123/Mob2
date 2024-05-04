@@ -2,7 +2,10 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="AdminEditMGaActivity">
+      <entry key="DetailMgaActivity">
+        <State />
+      </entry>
+      <entry key="UserLoginActivity">
         <State />
       </entry>
       <entry key="app">
