@@ -3,14 +3,14 @@ package com.example.androidproject.entity;
 import java.io.Serializable;
 
 public class AdminAccount implements Serializable {
-    public int AccountID;
-    public String DisplayName;
-    public String DoB;
-    public String Email;
-    public String Password;
-    public String Role;
+    private String AccountID;
+    private String DisplayName;
+    private String DoB;
+    private String Email;
+    private String Password;
+    private String Role;
     public AdminAccount(){}
-    public AdminAccount( int AccountID, String DisplayName, String DoB, String Email, String Password, String Role){
+    public AdminAccount( String AccountID, String DisplayName, String DoB, String Email, String Password, String Role){
         this.AccountID = AccountID;
         this.DisplayName = DisplayName;
         this.DoB = DoB;
@@ -19,11 +19,11 @@ public class AdminAccount implements Serializable {
         this.Role = Role;
     }
 
-    public int getAccountID() {
+    public String getAccountID() {
         return AccountID;
     }
 
-    public void setAccountID(int accountID) {
+    public void setAccountID(String accountID) {
         AccountID = accountID;
     }
 

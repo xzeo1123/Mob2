@@ -38,11 +38,11 @@ public class AdminAAccDetail extends AppCompatActivity {
         txtRole = findViewById(R.id.txtrole);
 
         assert adminAccount != null;
-        txtAccountId.setText(String.valueOf(adminAccount.AccountID));
-        txtDisplayName.setText(adminAccount.DisplayName);
-        txtEmail.setText(adminAccount.Email);
-        txtDOB.setText(adminAccount.DoB);
-        txtRole.setText(adminAccount.Role);
+        txtAccountId.setText(adminAccount.getAccountID());
+        txtDisplayName.setText(adminAccount.getDisplayName());
+        txtEmail.setText(adminAccount.getEmail());
+        txtDOB.setText(adminAccount.getDoB());
+        txtRole.setText(adminAccount.getRole());
 
 
 

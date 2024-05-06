@@ -52,12 +52,12 @@ public class AdminAccAdminActivity extends AppCompatActivity implements IRecycle
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     AdminAccount adminAccount = new AdminAccount();
-                    adminAccount.AccountID = snapshot.child("AccountID").getValue(Integer.class);;
-                    adminAccount.Email = snapshot.child("Email").getValue(String.class);;
-                    adminAccount.Password = snapshot.child("Password").getValue(String.class);;
-                    adminAccount.DisplayName = snapshot.child("DisplayName").getValue(String.class);;
-                    adminAccount.DoB = snapshot.child("DoB").getValue(String.class);;
-                    adminAccount.Role = snapshot.child("Role").getValue(String.class);;
+                    adminAccount.setAccountID(snapshot.child("AccountID").getValue(String.class));
+                    adminAccount.setEmail(snapshot.child("Email").getValue(String.class));
+                    adminAccount.setPassword(snapshot.child("Password").getValue(String.class));
+                    adminAccount.setDisplayName(snapshot.child("DisplayName").getValue(String.class));
+                    adminAccount.setDoB(snapshot.child("DoB").getValue(String.class));
+                    adminAccount.setRole(snapshot.child("Role").getValue(String.class));
 
 
                     adminAccountArrayList.add(adminAccount);
@@ -83,6 +83,5 @@ public class AdminAccAdminActivity extends AppCompatActivity implements IRecycle
         Intent intent = new Intent(AdminAccAdminActivity.this, AdminAAccDetail.class);
         intent.putExtra("adminAccount", adminAccount);
         startActivity(intent);
-        Log.i("Dataaaaaaaaa", adminAccount.DisplayName + " " + adminAccount.Password + " " + adminAccount.Email + " " + adminAccount.DoB + " " + adminAccount.Role + " " + adminAccount.AccountID);
-    }
+        }
 }
