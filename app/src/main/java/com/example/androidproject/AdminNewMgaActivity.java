@@ -36,7 +36,7 @@ public class AdminNewMgaActivity extends AppCompatActivity {
     private EditText edtPrice;
     private EditText edtAuthor;
     private EditText edtCategory;
-    private String currentCover;
+    private static File currentCover;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_IMAGE_PICK = 2;
     @Override
@@ -67,15 +67,20 @@ public class AdminNewMgaActivity extends AppCompatActivity {
         });
 
     }
-    public void InsertNewBook(Book bookData){
+    public void InsertNewBook(Book bookData) {
         try {
-            String bookKey = new DAOBook().addBook(bookData);
-            String volumeKey = new DAOBook().addVolume(bookKey, "Volume 1");
-            new DAOBook().addChapter(bookKey, volumeKey, "", new ArrayList<>());
-            Toast.makeText(this, "Insert new book successfully!", Toast.LENGTH_SHORT).show();
+            new DAOBook().addBook(bookData, currentCover)
+                    .addOnSuccessListener(bookKey -> {
+                        String volumeKey = new DAOBook().addVolume(bookKey, "Volume 1");
+                        new DAOBook().addChapter(bookKey, volumeKey, "", new ArrayList<>());
+                    });
+            Toast.makeText(this, "Created new Book successfully!", Toast.LENGTH_SHORT).show();
+            //Add back to home page or redirect to add chapters in manga activity
         } catch (Exception e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -107,12 +112,12 @@ public class AdminNewMgaActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            saveImageLocally(activity, imageBitmap);
+            currentCover = saveImageLocally(activity, imageBitmap);
         } else if (requestCode == REQUEST_IMAGE_PICK && resultCode == Activity.RESULT_OK) {
             Uri selectedImageUri = data.getData();
             try {
                 Bitmap imageBitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), selectedImageUri);
-                saveImageLocally(activity, imageBitmap);
+                currentCover = saveImageLocally(activity, imageBitmap);
             } catch (IOException e) {
                 e.printStackTrace();
                 Toast.makeText(activity, "Error loading image", Toast.LENGTH_SHORT).show();
@@ -120,7 +125,7 @@ public class AdminNewMgaActivity extends AppCompatActivity {
         }
     }
 
-    private static void saveImageLocally(Activity activity, Bitmap imageBitmap) {
+    private static File saveImageLocally(Activity activity, Bitmap imageBitmap) {
         String imageName = "image_" + System.currentTimeMillis() + ".jpg";
         File storageDir = activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File imageFile = new File(storageDir, imageName);
@@ -133,6 +138,7 @@ public class AdminNewMgaActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(activity, "Error saving image", Toast.LENGTH_SHORT).show();
         }
+        return imageFile;
     }
     private static void displaySavedImage(Activity activity, String imagePath) {
         // Load the saved image from file path

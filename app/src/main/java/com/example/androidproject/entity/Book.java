@@ -8,17 +8,19 @@ public class Book {
     private String Name;
     private double  price;
     private long UploadDate;
+    private String CoverURL;
     private List<Volume> Volume;
 
     public Book() {
     }
 
-    public Book(String authorID, String bookID, String name, double price, long uploadDate, List<Volume> volume) {
+    public Book(String authorID, String bookID, String name, double price, long uploadDate, String CoverURL,List<Volume> volume) {
         AuthorID = authorID;
         BookID = bookID;
         Name = name;
         this.price = price;
         UploadDate = uploadDate;
+        this.CoverURL = CoverURL;
         Volume = volume;
     }
 
@@ -60,6 +62,13 @@ public class Book {
 
     public void setUploadDate(long uploadDate) {
         UploadDate = uploadDate;
+    }
+    public String getCoverURL() {
+        return CoverURL;
+    }
+
+    public void setCoverURL(String coverURL) {
+        CoverURL = coverURL;
     }
 
     public List<Volume> getVolume() {
