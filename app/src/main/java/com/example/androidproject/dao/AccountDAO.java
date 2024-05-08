@@ -70,7 +70,7 @@ public class AccountDAO {
     }
 
     public int getID() {
-        String query = "SELECT accountID FROM " + CreateDatabase.TB_ACCOUNT_ACCOUNTID;
+        String query = "SELECT accountID FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
@@ -84,7 +84,7 @@ public class AccountDAO {
     }
 
     public String getEmail() {
-        String query = "SELECT email FROM " + CreateDatabase.TB_ACCOUNT_EMAIL;
+        String query = "SELECT email FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
@@ -98,7 +98,7 @@ public class AccountDAO {
     }
 
     public String getPassword() {
-        String query = "SELECT password FROM " + CreateDatabase.TB_ACCOUNT_PASSWORD;
+        String query = "SELECT password FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
@@ -112,7 +112,7 @@ public class AccountDAO {
     }
 
     public float getMoney() {
-        String query = "SELECT money FROM " + CreateDatabase.TB_ACCOUNT_MONEY;
+        String query = "SELECT money FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
@@ -126,7 +126,7 @@ public class AccountDAO {
     }
 
     public int getConfirmedCode() {
-        String query = "SELECT confirmedCode FROM " + CreateDatabase.TB_ACCOUNT_CONFIRMEDCODE;
+        String query = "SELECT confirmedCode FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
@@ -140,7 +140,7 @@ public class AccountDAO {
     }
 
     public String getFullName() {
-        String query = "SELECT fullName FROM " + CreateDatabase.TB_ACCOUNT_FULLNAME;
+        String query = "SELECT fullName FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
@@ -154,7 +154,7 @@ public class AccountDAO {
     }
 
     public String getDOB() {
-        String query = "SELECT dob FROM " + CreateDatabase.TB_ACCOUNT_DOB;
+        String query = "SELECT dob FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
@@ -168,7 +168,7 @@ public class AccountDAO {
     }
 
     public boolean getIsVip() {
-        String query = "SELECT isVip FROM " + CreateDatabase.TB_ACCOUNT_ISVIP;
+        String query = "SELECT isVip FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
