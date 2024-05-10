@@ -1,6 +1,9 @@
 package com.example.androidproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,17 +11,77 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AdminAccAdminActivity extends AppCompatActivity {
+import com.example.androidproject.IRecycleView.IRecycleViewAdminAcc;
+import com.example.androidproject.entity.AdminAccount;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+public class AdminAccAdminActivity extends AppCompatActivity implements IRecycleViewAdminAcc {
+    public ArrayList<AdminAccount> adminAccountArrayList = new ArrayList<>();
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference databaseReference = database.getReference("AdmAccount");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_admin_acc_admin);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        GetAdminAccounts();
+
+        RecyclerView adminAccRecyclerView = findViewById(R.id.adminAccRecyclerView);
+
+
+        AAdmin_RecyclerViewAdapter adapter = new AAdmin_RecyclerViewAdapter(this, adminAccountArrayList, this);
+        adminAccRecyclerView.setAdapter(adapter);
+        adminAccRecyclerView.setLayoutManager(new LinearLayoutManager((this)));
+    }
+
+    private void GetAdminAccounts(){
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    AdminAccount adminAccount = new AdminAccount();
+                    adminAccount.setAccountID(snapshot.child("AccountID").getValue(String.class));
+                    adminAccount.setEmail(snapshot.child("Email").getValue(String.class));
+                    adminAccount.setPassword(snapshot.child("Password").getValue(String.class));
+                    adminAccount.setDisplayName(snapshot.child("DisplayName").getValue(String.class));
+                    adminAccount.setDoB(snapshot.child("DoB").getValue(String.class));
+                    adminAccount.setRole(snapshot.child("Role").getValue(String.class));
+
+
+                    adminAccountArrayList.add(adminAccount);
+                }
+                updateRecyclerView();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle error
+            }
         });
     }
+    private void updateRecyclerView() {
+        RecyclerView adminAccRecyclerView = findViewById(R.id.adminAccRecyclerView);
+        AAdmin_RecyclerViewAdapter adapter = new AAdmin_RecyclerViewAdapter(this, adminAccountArrayList, this);
+        adminAccRecyclerView.setAdapter(adapter);
+        adminAccRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        }
+        @Override
+    public void onClickResetPassword(int position) {
+        AdminAccount adminAccount = adminAccountArrayList.get(position);
+        //Check this part is null or not
+        Intent intent = new Intent(AdminAccAdminActivity.this, AdminAAccDetail.class);
+        intent.putExtra("adminAccount", adminAccount);
+        startActivity(intent);
+        }
 }

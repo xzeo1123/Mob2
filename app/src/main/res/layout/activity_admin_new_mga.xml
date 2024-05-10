@@ -12,15 +12,15 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@null"
+        android:importantForAccessibility="no"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back_button"
-        android:importantForAccessibility="no" />
+        app:layout_constraintVertical_bias="0.02"
+        app:srcCompat="@drawable/back_button" />
 
     <TextView
         android:id="@+id/textView"
@@ -31,28 +31,28 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037"
         tools:ignore="HardcodedText" />
 
+
     <Button
-        android:id="@+id/buttonContinue"
+        android:id="@+id/btnAddBook"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Continue"
+        android:text="Add book"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="HardcodedText,MissingConstraints" />
 
-
     <ImageButton
-        android:id="@+id/buttonAdd"
+        android:id="@+id/btnAddImage"
         android:layout_width="117dp"
         android:layout_height="161dp"
         android:layout_gravity="center"
@@ -82,10 +82,10 @@
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtCategory"
         android:layout_width="388dp"
         android:layout_height="75dp"
-        android:text="Category"
+        android:hint="Category"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,28 +97,26 @@
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edtTitle"
         android:layout_width="388dp"
         android:layout_height="75dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="444dp"
-        android:text="Title of Manga"
+        android:layout_marginBottom="428dp"
+        android:hint="Title of Manga"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintHorizontal_bias="0.913"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdd"
-        app:layout_constraintVertical_bias="0.428"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddImage"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edtPrice"
         android:layout_width="388dp"
         android:layout_height="75dp"
-        android:text="Detail"
+        android:hint="Price"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -130,10 +128,10 @@
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edtAuthor"
         android:layout_width="388dp"
         android:layout_height="75dp"
-        android:text="Tag"
+        android:hint="Author"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -144,42 +142,7 @@
         app:layout_constraintVertical_bias="0.582"
         tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields" />
 
-    <FrameLayout
-        android:layout_width="225dp"
-        android:layout_height="126dp"
-        android:background="#D0DAFE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884"
-        tools:ignore="MissingConstraints">
 
-        <ImageButton
-            android:layout_width="155dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@null"
-            android:importantForAccessibility="no"
-            android:scaleType="fitXY"
-            android:src="@drawable/add"
-            tools:layout_editor_absoluteX="93dp"
-            tools:layout_editor_absoluteY="472dp" />
-
-    </FrameLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADD NEW CHAP"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
