@@ -32,6 +32,7 @@ import java.util.List;
 
 public class AdminNewMgaActivity extends AppCompatActivity {
     private static ImageButton btnAddImage;
+    private ImageButton buttonBack;
     private EditText edtTitle;
     private EditText edtPrice;
     private EditText edtAuthor;
@@ -48,6 +49,11 @@ public class AdminNewMgaActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        buttonBack = findViewById(R.id.buttonBack);
+        buttonBack.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AdminHomeActivity.class);
+            startActivity(intent);
         });
         btnAddImage = findViewById(R.id.btnAddImage);
         btnAddImage.setOnClickListener(view -> AddImage());
@@ -71,8 +77,7 @@ public class AdminNewMgaActivity extends AppCompatActivity {
         try {
             new DAOBook().addBook(bookData, currentCover)
                     .addOnSuccessListener(bookKey -> {
-                        String volumeKey = new DAOBook().addVolume(bookKey, "Volume 1");
-                        new DAOBook().addChapter(bookKey, volumeKey, "", new ArrayList<>());
+                        new DAOBook().addChapter(bookKey, "", new ArrayList<>());
                     });
             Toast.makeText(this, "Created new Book successfully!", Toast.LENGTH_SHORT).show();
             //Add back to home page or redirect to add chapters in manga activity

@@ -2,7 +2,7 @@
     <string name="app_name">AndroidProject</string>
     <string name="login">LOGIN</string>
 
-<!--  Account admin label properties  -->
+    <!--  Account admin label properties  -->
     <string name="adminaccountId">Account ID: </string>
     <string name="adminaccountDisplayname">Display Name: </string>
     <string name="adminaccountDob">Date of Birth: </string>

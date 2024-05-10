@@ -3,61 +3,61 @@ package com.example.androidproject.dao;
 import android.net.Uri;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.example.androidproject.entity.Book;
 import com.example.androidproject.entity.Chapter;
 import com.example.androidproject.entity.Volume;
-import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class DAOBook {
     private final DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
     private String bookKeyValue;
+public interface GetBookDataListener{
+    void onBooksLoaded(ArrayList<Book> books);
+    void onError(String errorMessage);
+}
+public ArrayList<Book> getBook(GetBookDataListener listener){
+    ArrayList<Book> books = new ArrayList<>();
+    DatabaseReference booksRef = FirebaseDatabase.getInstance().getReference("Book");
+    booksRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(@NonNull DataSnapshot snapshot) {
+            for (DataSnapshot bookSnapshot : snapshot.getChildren()){
+                Book book = new Book();
+                book.setBookID(bookSnapshot.getKey());
+                book.setPrice(bookSnapshot.child("price").getValue(Double.class));
+                book.setAuthorID(bookSnapshot.child("authorID").getValue(String.class));
+                book.setName(bookSnapshot.child("name").getValue(String.class));
+                book.setUploadDate(bookSnapshot.child("uploadDate").getValue(Long.class));
+                book.setCoverURL(bookSnapshot.child("coverURL").getValue(String.class));
+                if (book != null){
+                    books.add(book);
+                }
+            }
+            listener.onBooksLoaded(books);
+        }
 
-//    public String addBook(Book bookData, File imageFile) {
-//        // Get a reference to the Firebase Storage root
-//        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
-//
-//        // Create a reference to the folder with the book's name
-//        StorageReference folderRef = storageRef.child(bookData.getName());
-//
-//        // Create a reference to the image file inside the folder
-//        Uri fileUri = Uri.fromFile(imageFile);
-//        StorageReference imageRef = folderRef.child(fileUri.getLastPathSegment());
-//        imageRef.putFile(fileUri)
-//                .addOnSuccessListener(taskSnapshot -> {
-//                    // Get the download URL of the uploaded image
-//                    imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
-//                        // Image download URL retrieved successfully
-//                        String imageUrl = uri.toString();
-//                        // Store this URL in the Firebase Realtime Database
-//                        bookData.setCoverURL(imageUrl);
-//                        // Generate a unique key for the new book
-//                        String bookKey = databaseRef.child("Book").push().getKey();
-//                        assert bookKey != null;
-//                        databaseRef.child("Book").child(bookKey).setValue(bookData);
-//                        bookKeyValue = bookKey;
-//                    }).addOnFailureListener(e -> {
-//                        // Failed to retrieve download URL
-//                        Log.i("ERROR", e.getMessage());
-//                    });
-//                })
-//                .addOnFailureListener(e -> {
-//                    // Image upload failed
-//                    Log.i("ERROR", e.getMessage());
-//                });
-//        return bookKeyValue;
-//    }
+        @Override
+        public void onCancelled(@NonNull DatabaseError error) {
+            listener.onError(error.getMessage());
+        }
+    });
+    return books;
+}
 public Task<String> addBook(Book bookData, File imageFile) {
     // Get a reference to the Firebase Storage root
     StorageReference storageRef = FirebaseStorage.getInstance().getReference();
@@ -119,10 +119,10 @@ public Task<String> addBook(Book bookData, File imageFile) {
         return volumeKey;
     }
 
-    public void addChapter(String bookKey, String volumeKey, String chapterName, List<String> imageURLs) {
+    public void addChapter(String bookKey, String chapterName, List<String> imageURLs) {
         // Get reference to the "Chapters" node of the specified volume
         DatabaseReference chaptersRef = databaseRef.child("Book").child(bookKey)
-                .child("Volume").child(volumeKey);
+                .child("Chapter");
 
         // Generate a unique key for the new chapter
         String chapterKey = chaptersRef.push().getKey();

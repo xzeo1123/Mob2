@@ -1,27 +1,28 @@
 package com.example.androidproject.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Book {
+public class Book implements Serializable {
     private String AuthorID;
     private String BookID;
     private String Name;
     private double  price;
     private long UploadDate;
     private String CoverURL;
-    private List<Volume> Volume;
+    private List<Chapter> Chapter;
 
     public Book() {
     }
 
-    public Book(String authorID, String bookID, String name, double price, long uploadDate, String CoverURL,List<Volume> volume) {
+    public Book(String authorID, String bookID, String name, double price, long uploadDate, String CoverURL,List<Chapter> chapter) {
         AuthorID = authorID;
         BookID = bookID;
         Name = name;
         this.price = price;
         UploadDate = uploadDate;
         this.CoverURL = CoverURL;
-        Volume = volume;
+        Chapter = chapter;
     }
 
     public String getAuthorID() {
@@ -71,11 +72,11 @@ public class Book {
         CoverURL = coverURL;
     }
 
-    public List<Volume> getVolume() {
-        return Volume;
+    public List<Chapter>  getChapter() {
+        return Chapter;
     }
 
-    public void setVolume(List<Volume> volume) {
-        Volume = volume;
+    public void setChapter(List<Chapter> chapter) {
+        Chapter = chapter;
     }
 }
