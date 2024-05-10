@@ -2,10 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="DetailMgaActivity">
+      <entry key="BCFavorActivity">
         <State />
       </entry>
-      <entry key="UserLoginActivity">
+      <entry key="BCListActivity">
+        <State />
+      </entry>
+      <entry key="BookListActivity">
+        <State />
+      </entry>
+      <entry key="UserAfter">
         <State />
       </entry>
       <entry key="app">

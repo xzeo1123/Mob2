@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class UserHomeActivity extends AppCompatActivity {
 
     ImageButton btnUser;
+    ImageButton btnPlayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +28,20 @@ public class UserHomeActivity extends AppCompatActivity {
         mappingComponents();
 
         btnUser.setOnClickListener(v -> goToUserInfo());
+        btnPlayList.setOnClickListener(v -> goToPlayList());
     }
 
     private void mappingComponents() {
         btnUser = findViewById(R.id.imageUser);
+        btnPlayList = findViewById(R.id.imagePlaylist);
     }
 
     private void goToUserInfo() {
         Intent intent = new Intent(UserHomeActivity.this, UserAfter.class);
+        startActivity(intent);
+    }
+    private void goToPlayList() {
+        Intent intent = new Intent(UserHomeActivity.this, BCListActivity.class);
         startActivity(intent);
     }
 }

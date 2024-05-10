@@ -85,7 +85,7 @@
                 tools:layout_editor_absoluteY="18dp" />
 
             <Button
-                android:id="@+id/list"
+                android:id="@+id/playList"
                 android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:background="#4D4F5E"
@@ -208,5 +208,4 @@
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

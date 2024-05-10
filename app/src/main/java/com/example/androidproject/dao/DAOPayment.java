@@ -19,7 +19,7 @@ public class DAOPayment {
 
         accountRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     float currentMoney = dataSnapshot.getValue(Float.class);
                     float updatedMoney = currentMoney + money;
