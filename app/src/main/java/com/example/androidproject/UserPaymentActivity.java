@@ -39,7 +39,6 @@ public class UserPaymentActivity extends AppCompatActivity {
         getSQLiteData();
 
         btnPay.setOnClickListener(v -> PayWithCard());
-
     }
 
     private void mappingComponent() {

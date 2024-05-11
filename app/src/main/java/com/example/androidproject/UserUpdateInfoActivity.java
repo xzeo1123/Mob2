@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -23,9 +22,9 @@ import com.example.androidproject.entity.Account;
 
 public class UserUpdateInfoActivity extends AppCompatActivity {
     private EditText txtFullName;
-    private TextView txtDob, txtMoney, txtVip;
+    private TextView txtMoney, txtVip;
     private DatePicker datePicker;
-    private Button btnPick, btnActivate, btnBuy, btnUpdate;
+    private Button btnActivate, btnBuy, btnUpdate;
     private ImageButton btnBack;
     private Context mContext;
     private final DAOUpdateInfo daoUpdateInfo = new DAOUpdateInfo();
@@ -45,8 +44,6 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
 
         getSQLiteData();
 
-        btnPick.setOnClickListener(v -> openDatePicker());
-
         btnUpdate.setOnClickListener(v -> updateInfo());
 
         btnBuy.setOnClickListener(v -> TransferToBuy());
@@ -59,13 +56,11 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
     private void mappingComponent() {
         txtFullName = findViewById(R.id.editTextFullName);
 
-        txtDob = findViewById(R.id.textViewDob);
         txtMoney = findViewById(R.id.textViewMoney);
         txtVip = findViewById(R.id.textViewVip);
 
         datePicker = findViewById(R.id.datePicker);
 
-        btnPick = findViewById(R.id.buttonPickDate);
         btnBuy = findViewById(R.id.buttonBuy);
         btnActivate = findViewById(R.id.buttonActivate);
         btnUpdate = findViewById(R.id.buttonUpdate);
@@ -82,41 +77,22 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
             Account account = accountDAO.getAccount();
             txtFullName.setText(account.getFullName());
 
-            txtDob.setText(String.valueOf(account.getDob()));
+            String dateFromDatabase = account.getDob();
+
+            String[] parts = dateFromDatabase.split(" ");
+            int day = Integer.parseInt(parts[0]);
+            int month = Integer.parseInt(parts[1]) - 1;
+            int year = Integer.parseInt(parts[2]);
+
+            datePicker.init(year, month, day, null);
+
             txtMoney.setText(String.valueOf(account.getMoney()));
             txtVip.setText(String.valueOf(account.getVip()));
         }
     }
 
-    private void openDatePicker() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setTitle("Select Date");
-
-        String dobText = txtDob.getText().toString();
-        String[] dobValues = dobText.split("/");
-        int day = Integer.parseInt(dobValues[0]);
-        int month = Integer.parseInt(dobValues[1]) - 1;
-        int year = Integer.parseInt(dobValues[2]);
-
-        datePicker = new DatePicker(mContext);
-        datePicker.init(year, month, day, null);
-
-        builder.setView(datePicker);
-        builder.setPositiveButton("OK", (dialog, which) -> {
-            int day1 = datePicker.getDayOfMonth();
-            int month1 = datePicker.getMonth() + 1;
-            int year1 = datePicker.getYear();
-
-            txtDob.setText(day1 + "/" + month1 + "/" + year1);
-        });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
     private void updateInfo() {
         String fullName = String.valueOf(txtFullName.getText());
-        String dob = String.valueOf(txtDob.getText());
 
         boolean flagCheckEmptyFullName = checkEmptyFullName(fullName);
         if(flagCheckEmptyFullName) {
@@ -129,7 +105,14 @@ public class UserUpdateInfoActivity extends AppCompatActivity {
         Account account = accountDAO.getAccount();
 
         account.setFullName(fullName);
-        account.setDob(dob);
+
+        int day = datePicker.getDayOfMonth();
+        int month = datePicker.getMonth() + 1;
+        int year = datePicker.getYear();
+
+        String formattedDate = String.format("%02d %02d %04d", day, month, year);
+
+        account.setDob(formattedDate);
 
         daoUpdateInfo.UpdateInfo(account.getAccountID(), account);
         accountDAO.addAccount(account, true);

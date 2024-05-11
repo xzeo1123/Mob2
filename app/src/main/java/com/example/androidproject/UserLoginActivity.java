@@ -138,7 +138,7 @@ public class UserLoginActivity extends AppCompatActivity {
     }
 
     private void firebaseAuth(String idToken) {
-        new Handler().postDelayed(() -> daoLoginWithGoogle.firebaseAuth(idToken, auth, idList, emailList, new DAOLoginWithGoogle.FirebaseAuthCallback() {
+        new Handler().postDelayed(() -> daoLoginWithGoogle.firebaseAuth(idToken, auth, idList, emailList, mContext, new DAOLoginWithGoogle.FirebaseAuthCallback() {
             @Override
             public void onSuccess() {
                 Intent intent = new Intent(UserLoginActivity.this, UserHomeActivity.class);

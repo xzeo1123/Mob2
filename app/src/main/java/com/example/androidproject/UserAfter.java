@@ -1,5 +1,6 @@
 package com.example.androidproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -10,8 +11,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.androidproject.dao.AccountDAO;
+
 public class UserAfter extends AppCompatActivity {
-    TextView txtEditProfile, txtChangePass;
+    private TextView txtEditProfile, txtChangePass, txtUserName;
+    private Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +30,8 @@ public class UserAfter extends AppCompatActivity {
 
         mappingComponents();
 
+        renderData();
+
         txtEditProfile.setOnClickListener(v -> goToUpdateInfo());
 
         txtChangePass.setOnClickListener(v -> goToChangePass());
@@ -33,6 +40,9 @@ public class UserAfter extends AppCompatActivity {
     private void mappingComponents() {
         txtEditProfile = findViewById(R.id.textViewEditProfile);
         txtChangePass = findViewById(R.id.textViewChangePassword);
+        txtUserName = findViewById(R.id.textViewUserName);
+
+        mContext = this;
     }
 
     private void goToUpdateInfo() {
@@ -43,5 +53,13 @@ public class UserAfter extends AppCompatActivity {
     private void goToChangePass() {
         Intent intent = new Intent(UserAfter.this, UserChangePassActivity.class);
         startActivity(intent);
+    }
+
+    private void renderData() {
+        AccountDAO accountDAO = new AccountDAO(mContext);
+        boolean check = accountDAO.checkExistAccount();
+        if (check) {
+            txtUserName.setText(accountDAO.getFullName());
+        }
     }
 }

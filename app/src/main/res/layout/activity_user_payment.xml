@@ -183,17 +183,6 @@
             android:inputType="number"
             android:digits="0123456789"
             tools:ignore="Autofill,HardcodedText,InefficientWeight" />
-
-        <com.paypal.checkout.paymentbutton.PaymentButtonContainer
-            android:id="@+id/buttonPayPal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            app:paypal_button_color="blue"
-            app:paypal_button_enabled="true"
-            app:paypal_button_label="pay"
-            app:paypal_button_shape="rectangle"
-            app:paypal_button_size="large" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

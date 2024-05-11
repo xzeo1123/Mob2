@@ -85,7 +85,7 @@
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="407dp"
-        android:layout_height="97dp"
+        android:layout_height="200dp"
         android:orientation="horizontal"
         android:padding="16dp"
         android:gravity="center"
@@ -106,28 +106,21 @@
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
-        <TextView
-            android:id="@+id/textViewDob"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:text="1/1/2001"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+        <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center_horizontal"
+         android:orientation="vertical"
+         android:padding="8dp">
 
-        <Button
-            android:id="@+id/buttonPickDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pick"
-            tools:ignore="HardcodedText" />
+         <DatePicker
+             android:id="@+id/datePicker"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:calendarViewShown="false"
+             android:datePickerMode="spinner" />
 
-        <DatePicker
-            android:id="@+id/datePicker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -230,21 +223,5 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout10"
         app:layout_constraintVertical_bias="0.1"
         tools:ignore="HardcodedText,MissingConstraints" />
-
-    <!--  <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:gravity="center_horizontal"
-         android:orientation="vertical"
-         android:padding="8dp">
-
-         <DatePicker
-             android:id="@+id/datePicker2"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:calendarViewShown="false"
-             android:datePickerMode="spinner" />
-
-    </LinearLayout> -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

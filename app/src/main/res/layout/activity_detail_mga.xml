@@ -21,37 +21,22 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription" />
 
-    <ImageButton
-     android:id="@+id/buttonBack"
-     android:layout_width="50dp"
-     android:layout_height="50dp"
-     android:background="@null"
-     android:importantForAccessibility="no"
-     android:scaleType="fitXY"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.055"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.023"
-     app:srcCompat="@drawable/back_button" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
+        android:text="3HT MANGA"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="HardcodedText" />
 
-   <TextView
-       android:id="@+id/textView"
-       android:layout_width="134dp"
-       android:layout_height="38dp"
-       android:text="3HT MANGA"
-       android:textSize="20sp"
-       android:textStyle="bold"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.317"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintVertical_bias="0.04"
-       tools:ignore="HardcodedText" />
-
-   <HorizontalScrollView
+    <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -90,7 +75,7 @@
     </HorizontalScrollView>
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imgViewCover"
         android:layout_width="117dp"
         android:layout_height="161dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -227,23 +212,23 @@
         tools:ignore="DuplicateIds,MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonFollow"
+        android:id="@+id/buttonRead"
         android:layout_width="89dp"
         android:layout_height="50dp"
         android:layout_marginStart="17dp"
         android:layout_marginEnd="172dp"
-        android:text="Follow"
+        android:text="Read"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/imgViewCover"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.355"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <Button
-        android:id="@+id/buttonAdd2Favour"
+        android:id="@+id/buttonAddToFavor"
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:text="Add to favourite"
@@ -257,7 +242,7 @@
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -267,13 +252,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/imgViewCover"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.202"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/txtCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -284,12 +269,14 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgViewCover"
+        app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/txtAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
@@ -299,73 +286,25 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView24"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="244dp"
-        android:layout_marginBottom="504dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/viewer"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
-    <TextView
-        android:id="@+id/like"
-        android:layout_width="70dp"
-        android:layout_height="14dp"
-        android:layout_marginTop="16dp"
-        android:text="1384291"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageLike"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintStart_toEndOf="@+id/imgViewCover"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageLike"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="12dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.006"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/heart"
-        tools:ignore="ContentDescription,MissingConstraints" />
-
     <TextView
-        android:id="@+id/view"
+        android:id="@+id/txtPrice"
         android:layout_width="30dp"
         android:layout_height="14dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="14dp"
         android:layout_marginBottom="508dp"
-        android:text="300k"
+        android:text="Price: 1$"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toEndOf="@+id/imgViewCover"
+        app:layout_constraintTop_toBottomOf="@+id/txtCategory"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
@@ -396,7 +335,7 @@
         tools:ignore="DuplicateIds,MissingConstraints" />
 
     <TextView
-        android:id="@+id/details"
+        android:id="@+id/txtDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"

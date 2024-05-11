@@ -1,5 +1,7 @@
 package com.example.androidproject.dao;
 
+import android.content.Context;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidproject.entity.Account;
@@ -23,7 +25,7 @@ public class DAOLoginWithGoogle extends AppCompatActivity {
         void onFailure();
     }
 
-    public void firebaseAuth(String idToken, FirebaseAuth auth, List<Integer> idList, List<String> emailList, FirebaseAuthCallback callback) {
+    public void firebaseAuth(String idToken, FirebaseAuth auth, List<Integer> idList, List<String> emailList, Context mContext, FirebaseAuthCallback callback) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
 
         auth.signInWithCredential(credential)
@@ -42,6 +44,8 @@ public class DAOLoginWithGoogle extends AppCompatActivity {
                             Account account = new Account(marking, email, user.getUid(), 0, 999999, user.getDisplayName(), formattedDate, false);
                             mData.child("Account").child(String.valueOf(marking)).setValue(null);
                             mData.child("Account").child(String.valueOf(marking)).setValue(account);
+
+                            StorePassword(account, mContext);
                         }
                         callback.onSuccess();
                     } else {
@@ -61,6 +65,12 @@ public class DAOLoginWithGoogle extends AppCompatActivity {
         }
 
         return marking;
+    }
+
+    private void StorePassword(Account account, Context mContext) {
+        AccountDAO accountDAO = new AccountDAO(mContext);
+
+        accountDAO.addAccount(account, false);
     }
 }
 
