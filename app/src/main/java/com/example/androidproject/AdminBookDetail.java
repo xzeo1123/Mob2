@@ -65,7 +65,7 @@ public class AdminBookDetail extends AppCompatActivity {
         Button btnAddChapter = findViewById(R.id.btnAddChapter);
         btnAddChapter.setOnClickListener(view -> {
             Intent newMangaIntent = new Intent(this, AdminWriteMgaActivity.class);
-            newMangaIntent.putExtra("BookID", book.getBookID());
+            newMangaIntent.putExtra("BookInfo", book);
             startActivity(newMangaIntent);
         });
     }

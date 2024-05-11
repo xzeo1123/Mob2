@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,7 +39,11 @@ public class AdminPostedActivity extends AppCompatActivity implements IRecycleVi
         });
         RecyclerView booksRecycleView = findViewById(R.id.booksRecycleView);
         APosted_RecyclerViewAdapter adapter = new APosted_RecyclerViewAdapter(this, bookArrayList, this);
-
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> {
+            Intent intent = new Intent(this, AdminHomeActivity.class);
+            startActivity(intent);
+        });
         new DAOBook().getBook(new DAOBook.GetBookDataListener() {
             @Override
             public void onBooksLoaded(ArrayList<Book> books) {

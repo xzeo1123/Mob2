@@ -75,10 +75,11 @@ public class AdminNewMgaActivity extends AppCompatActivity {
     }
     public void InsertNewBook(Book bookData) {
         try {
-            new DAOBook().addBook(bookData, currentCover)
-                    .addOnSuccessListener(bookKey -> {
-                        new DAOBook().addChapter(bookKey, "", new ArrayList<>());
-                    });
+//            new DAOBook().addBook(bookData, currentCover)
+//                    .addOnSuccessListener(bookKey -> {
+//                        new DAOBook().addChapter(bookKey, "", new ArrayList<>());
+//                    });
+            new DAOBook().addBook(bookData, currentCover);
             Toast.makeText(this, "Created new Book successfully!", Toast.LENGTH_SHORT).show();
             //Add back to home page or redirect to add chapters in manga activity
         } catch (Exception e){
