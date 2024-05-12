@@ -86,7 +86,7 @@ public class WriteCmtActivity extends AppCompatActivity {
     private void writeComment() {
         String comment = String.valueOf(etxtCmt.getText());
         int userId = getSQLiteData();
-        int bookId = getParseData();
+        String bookId = getParseData();
 
         getAllData();
         setPosition();
@@ -114,12 +114,12 @@ public class WriteCmtActivity extends AppCompatActivity {
         }
     }
 
-    private int getParseData() {
+    private String getParseData() {
         Intent intent = getIntent();
         if (intent != null) {
-            return intent.getIntExtra("BookId", 0);
+            return intent.getStringExtra("BookId");
         }
-        return 0;
+        return "";
     }
 
     private void goToBook() {

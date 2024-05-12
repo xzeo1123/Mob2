@@ -4,14 +4,14 @@ public class Rating {
     private int ratingId;
     private String comment;
     private String ratingDate;
-    private int bookId;
+    private String bookId;
     private int userId;
 
     public Rating() {
 
     }
 
-    public Rating(int ratingId, String comment, String ratingDate, int bookId, int userId) {
+    public Rating(int ratingId, String comment, String ratingDate, String bookId, int userId) {
         this.ratingId = ratingId;
         this.comment = comment;
         this.ratingDate = ratingDate;
@@ -43,11 +43,11 @@ public class Rating {
         this.comment = comment;
     }
 
-    public int getBookId() {
+    public String getBookId() {
         return bookId;
     }
 
-    public void setBookId(int bookId) {
+    public void setBookId(String bookId) {
         this.bookId = bookId;
     }
 

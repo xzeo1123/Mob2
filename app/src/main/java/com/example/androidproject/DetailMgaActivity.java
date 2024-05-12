@@ -28,10 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailMgaActivity extends AppCompatActivity {
-    private TextView txtName, txtAuthor, txtCategory, txtPrice, txtDescription;
+    private TextView txtName, txtAuthor, txtCategory, txtPrice, txtDescription, txtNameAndComment;
     private Button btnRead, btnAdd, btnComment, btnChapter;
     private ImageView imgView;
-    private final List<Integer> idList = new ArrayList<>();
     private int idReadingList = 0;
     private int idFavorList = 0;
     private final List<PlayList> playlists = new ArrayList<>();
@@ -80,6 +79,7 @@ public class DetailMgaActivity extends AppCompatActivity {
         txtCategory = findViewById(R.id.txtCategory);
         txtPrice = findViewById(R.id.txtPrice);
         txtDescription = findViewById(R.id.txtDescription);
+        txtNameAndComment = findViewById(R.id.textViewNameAndComment);
 
         btnRead = findViewById(R.id.buttonRead);
         btnAdd = findViewById(R.id.buttonAddToFavor);
@@ -97,12 +97,12 @@ public class DetailMgaActivity extends AppCompatActivity {
             if (detailBook != null) {
                 txtName.setText(detailBook.getName());
 
-                txtAuthor.setText(detailBook.getName());
+                String authorID = detailBook.getAuthorId();
+                daoDetailManga.getAuthorByID(authorID, author -> {
+                    txtAuthor.setText(author.getName());
+                });
 
-                txtCategory.setText(detailBook.getName());
-
-                double getPrice = detailBook.getPrice();
-                txtPrice.setText(String.valueOf(getPrice));
+                txtPrice.setText("Price: " + detailBook.getPrice() + "$");
 
                 txtDescription.setText(detailBook.getName());
 
@@ -111,6 +111,14 @@ public class DetailMgaActivity extends AppCompatActivity {
                         .load(imageUrl)
                         .apply(new RequestOptions())
                         .into(imgView);
+            }
+        });
+
+        daoDetailManga.getLatestRating(bookId, rating -> {
+            if(rating != null) {
+                daoDetailManga.getUserNameByID(String.valueOf(rating.getUserId()), account -> {
+                    txtNameAndComment.setText(account.getFullName() + "\n" + rating.getComment());
+                });
             }
         });
     }
