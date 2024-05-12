@@ -33,11 +33,14 @@ public class BCListActivity extends AppCompatActivity {
 
     private final DAOPlayList daoPlayList = new DAOPlayList();
     private int accountID;
-    private int marking = 0;
+    private int marking = 1;
     protected Intent intent;
     private AccountDAO accountDAO;
     private Context mContext;
     private Button addButton;
+    private Button readingButton;
+    private Button favorButton;
+    private Button listButton;
     private EditText editTextName;
     private Button buttonAdd;
     private Button buttonCancel;
@@ -64,12 +67,20 @@ public class BCListActivity extends AppCompatActivity {
         mContext = this;
         buttonBack = findViewById(R.id.buttonBack);
         buttonBack.setOnClickListener(v -> goToHome());
-        addButton = findViewById(R.id.addNewButton);
-        addButton.setOnClickListener(v -> addNewPlayList());
+
+        readingButton = findViewById(R.id.reading);
+        readingButton.setOnClickListener(v -> goToReading());
+        favorButton = findViewById(R.id.favor);
+        favorButton.setOnClickListener(v -> goToFavor());
+        listButton = findViewById(R.id.playList);
+        listButton.setOnClickListener(v -> goToList());
+
         RecyclerView recyclerView = findViewById(R.id.recyclerViewPlaylists);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        addButton = findViewById(R.id.addNewButton);
+        addButton.setOnClickListener(v -> addNewPlayList());
         bottomSheetDialog.setContentView(R.layout.addplaylist_sheet);
         editTextName = bottomSheetDialog.findViewById(R.id.editTextName);
         buttonAdd = bottomSheetDialog.findViewById(R.id.buttonAdd);
@@ -90,6 +101,17 @@ public class BCListActivity extends AppCompatActivity {
     private void goToHome() {
         Intent intent = new Intent(BCListActivity.this, UserHomeActivity.class);
         startActivity(intent);
+    }
+    private void goToReading() {
+        Intent intent = new Intent(BCListActivity.this, BCReadingActivity.class);
+        startActivity(intent);
+    }
+    private void goToFavor() {
+        Intent intent = new Intent(BCListActivity.this, BCFavorActivity.class);
+        startActivity(intent);
+    }
+    private void goToList() {
+        restartActivity();
     }
 
     private void getAllData(){
@@ -135,10 +157,7 @@ public class BCListActivity extends AppCompatActivity {
     }
     private void setPosition() {
         getAllData();
-        while (true) {
-            if (!idList.contains(marking)) {
-                break;
-            }
+        while (idList.contains(marking)) {
             marking += 1;
         }
     }

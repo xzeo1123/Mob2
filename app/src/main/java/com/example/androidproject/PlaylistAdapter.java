@@ -1,5 +1,6 @@
 package com.example.androidproject;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -40,15 +41,28 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.Playli
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlaylistViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PlaylistViewHolder holder, @SuppressLint("RecyclerView") int position) {
         PlayList playlist = playlists.get(position);
 //        holder.imageView.setImageResource(playlist.getImageResId());
         holder.textViewTitle.setText(playlist.getName());
-        holder.buttonOverflow.setOnClickListener(new View.OnClickListener() {
+        holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Handle overflow button click
                 holder.showDeleteConfirmationDialog(playlist.getListID(), position);
+            }
+        });
+        holder.buttonOpen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create Intent to navigate to the new activity
+                Intent intent = new Intent(mContext, BCBooksActivity.class);
+
+                // Put the list ID as an extra in the Intent
+                intent.putExtra("LIST_ID", playlist.getListID());
+
+                // Start the new activity with the Intent
+                mContext.startActivity(intent);
             }
         });
     }
@@ -61,17 +75,31 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.Playli
     public class PlaylistViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textViewTitle;
-        Button buttonOverflow;
+        Button buttonDelete;
+        Button buttonOpen;
 
 
         public PlaylistViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            buttonOverflow = itemView.findViewById(R.id.buttonOverflow);
+            buttonDelete = itemView.findViewById(R.id.buttonDelete);
+            buttonOpen = itemView.findViewById(R.id.buttonOpen);
         }
 
         private void showDeleteConfirmationDialog(int listID, int position) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder.setTitle("Confirm Delete");
+            builder.setMessage("Are you sure you want to delete this playlist?");
+            builder.setPositiveButton("Delete", (dialog, which) -> {
+                deletePlaylist(listID, position);
+            });
+            builder.setNegativeButton("Cancel", (dialog, which) -> {
+                // Cancel action, do nothing
+            });
+            builder.show();
+        }
+        private void openPlaylist(int listID, int position) {
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
             builder.setTitle("Confirm Delete");
             builder.setMessage("Are you sure you want to delete this playlist?");

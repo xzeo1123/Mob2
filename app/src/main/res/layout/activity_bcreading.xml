@@ -5,36 +5,31 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BCReadingActivity"
+    tools:context=".BCListActivity"
     tools:ignore="ExtraText">
 
     <ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
         android:src="@drawable/bg_user"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
         tools:ignore="ContentDescription" />
-
 
     <ImageButton
         android:id="@+id/buttonBack"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@null"
+        android:importantForAccessibility="no"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
-        app:srcCompat="@drawable/back_button"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:layout_constraintVertical_bias="0.02"
+        app:srcCompat="@drawable/back_button" />
 
     <TextView
         android:id="@+id/textView"
@@ -45,10 +40,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
+        app:layout_constraintHorizontal_bias="0.267"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
@@ -76,7 +71,6 @@
                 android:background="#36373C"
                 android:text="Reading"
                 android:textSize="12sp"
-                android:textStyle="bold"
                 tools:ignore="ButtonStyle, HardcodedText"
                 tools:layout_editor_absoluteY="18dp" />
 
@@ -97,6 +91,7 @@
                 android:background="#4D4F5E"
                 android:text="List"
                 android:textSize="12sp"
+                android:textStyle="bold"
                 tools:ignore="ButtonStyle, HardcodedText"
                 tools:layout_editor_absoluteY="18dp" />
 
@@ -104,114 +99,32 @@
     </HorizontalScrollView>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:id="@+id/linearLayout6"
+        android:layout_width="392dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.608"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView2"
+        app:layout_constraintVertical_bias="0.25"
+        tools:ignore="MissingConstraints">
 
-        <ImageView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBooklists"
             android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg3_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Doraemon"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            android:layout_height="match_parent"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp" />
 
     </LinearLayout>
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.0" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg4_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Shin"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg2_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Conan"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg1_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Naruto"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

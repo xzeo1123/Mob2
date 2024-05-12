@@ -1,5 +1,6 @@
 package com.example.androidproject.dao;
 
+import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 
 import com.example.androidproject.entity.Account;
 import com.example.androidproject.entity.PlayList;
+import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,7 +18,9 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class DAOPlayList {
     private static final DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
@@ -72,27 +76,10 @@ public class DAOPlayList {
             });
         }).start();
     }
-    public interface ListFetchCallback {
-        void onListsFetched(PlayList list);
-    }
-
-    public void getListById(int playlistId, final ListFetchCallback callback) {
-        String sListID = String.valueOf(playlistId);
-        mData.child("List").child(sListID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                PlayList playlist = dataSnapshot.getValue(PlayList.class);
-                callback.onListsFetched(playlist);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-    }
 
     public interface PlayListFetchCallback {
         void onPlayListsFetched(List<PlayList> playlistList);
+
     }
     public void getListByAccountId(int accountID, final PlayListFetchCallback callback) {
         new Thread(() -> {
@@ -100,12 +87,68 @@ public class DAOPlayList {
             mData.child("List").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    int skippedPlaylists = 0; // Track the number of playlists skipped
                     for (DataSnapshot listSnapshot : dataSnapshot.getChildren()) {
+                        if (skippedPlaylists < 2) {
+                            skippedPlaylists++;
+                            continue; // Skip the first two playlists
+                        }
                         // Here, use listSnapshot to retrieve each playlist
                         PlayList playlist = listSnapshot.getValue(PlayList.class);
                         if (playlist != null && playlist.getAccountID() == accountID) {
                             playlistList.add(playlist);
-                            // Log the retrieved playlist
+                        }
+                    }
+                    // Log the total number of playlists retrieved
+                    Log.d("Playlist", "Total playlists retrieved: " + playlistList.size());
+
+                    new Handler(Looper.getMainLooper()).post(() -> callback.onPlayListsFetched(playlistList));
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Handle onCancelled event if needed
+                    Log.e("Playlist", "Error retrieving playlists: " + databaseError.getMessage());
+                }
+            });
+        }).start();
+    }
+    public void getReadingListByAccountId(int accountID, final PlayListFetchCallback callback) {
+        new Thread(() -> {
+            final List<PlayList> playlistList = new ArrayList<>();
+            mData.child("List").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot listSnapshot : dataSnapshot.getChildren()) {
+                        PlayList playlist = listSnapshot.getValue(PlayList.class);
+                        if (playlist != null && playlist.getAccountID() == accountID && Objects.equals(playlist.getName(), "Reading")) {
+                            playlistList.add(playlist);
+                        }
+                    }
+                    // Log the total number of playlists retrieved
+                    Log.d("Playlist", "Total playlists retrieved: " + playlistList.size());
+
+                    new Handler(Looper.getMainLooper()).post(() -> callback.onPlayListsFetched(playlistList));
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Handle onCancelled event if needed
+                    Log.e("Playlist", "Error retrieving playlists: " + databaseError.getMessage());
+                }
+            });
+        }).start();
+    }
+    public void getFavorListByAccountId(int accountID, final PlayListFetchCallback callback) {
+        new Thread(() -> {
+            final List<PlayList> playlistList = new ArrayList<>();
+            mData.child("List").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot listSnapshot : dataSnapshot.getChildren()) {
+                        PlayList playlist = listSnapshot.getValue(PlayList.class);
+                        if (playlist != null && playlist.getAccountID() == accountID && Objects.equals(playlist.getName(), "Favorite")) {
+                            playlistList.add(playlist);
                         }
                     }
                     // Log the total number of playlists retrieved

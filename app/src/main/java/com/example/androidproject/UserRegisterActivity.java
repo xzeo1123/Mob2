@@ -15,8 +15,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.androidproject.dao.DAOPlayList;
 import com.example.androidproject.dao.DAOSignup;
 import com.example.androidproject.entity.Account;
+import com.example.androidproject.entity.PlayList;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -41,10 +43,14 @@ public class UserRegisterActivity extends AppCompatActivity {
     private Button btnSignup;
     private ImageButton btnBack;
     private Context mContext;
-    private int marking = 0;
+    private int marking = 1;
+    private int ListRMarking = 1;
+    private int ListFMarking = 1;
     private List<String> emailList = new ArrayList<>();
     private final List<Integer> idList = new ArrayList<>();
+    private final List<Integer> idPlayList = new ArrayList<>();
     private final DAOSignup daoSignup = new DAOSignup();
+    private final DAOPlayList daoPlayList = new DAOPlayList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +99,16 @@ public class UserRegisterActivity extends AppCompatActivity {
         daoSignup.getEmailList(emailList -> {
             this.emailList.clear();
             this.emailList = emailList;
+        });
+        daoPlayList.getIDList(idList -> {
+            this.idPlayList.clear();
+            for (String id : idList) {
+                try {
+                    Integer intValue = Integer.parseInt(id);
+                    this.idPlayList.add(intValue);
+                } catch (NumberFormatException ignored) {
+                }
+            }
         });
     }
 
@@ -154,6 +170,7 @@ public class UserRegisterActivity extends AppCompatActivity {
 
         setPosition();
 
+
         int randomcode = (int) (Math.random() * (999998 - 100000 + 1) + 100000);
 
         LocalDate currentDate = LocalDate.now();
@@ -164,6 +181,9 @@ public class UserRegisterActivity extends AppCompatActivity {
         String md5Pass = MD5.md5(getPassword);
         ac = new Account(marking, getEmail, md5Pass, 0, randomcode, "NAME", formattedDate, false);
         daoSignup.addAccount(marking, ac);
+
+        //add default list
+        addFavoritePlayList();
 
         sendCodeToEmail(getEmail, randomcode);
         Toast.makeText(mContext, "Mã xác nhận đã gửi về email " + getEmail + "!", Toast.LENGTH_SHORT).show();
@@ -206,6 +226,23 @@ public class UserRegisterActivity extends AppCompatActivity {
             }
             i += 1;
         }
+    }
+    private void setFListPosition() {
+        getAllData();
+        while (idPlayList.contains(ListFMarking)) {
+            ListFMarking++;
+        }
+        ListRMarking = ListFMarking + 1;
+        while (idPlayList.contains(ListRMarking)) {
+            ListRMarking++;
+        }
+    }
+    private void addFavoritePlayList() {
+        setFListPosition();
+        PlayList newFPlayList = new PlayList(ListFMarking, "Favorite",marking);
+        DAOPlayList.addPlayList(ListFMarking, newFPlayList);
+        PlayList newRPlayList = new PlayList(ListRMarking, "Reading",marking);
+        DAOPlayList.addPlayList(ListRMarking, newRPlayList);
     }
 
     private boolean hasEmail(String email) {
