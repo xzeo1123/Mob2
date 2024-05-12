@@ -49,9 +49,7 @@ public class DAOBook {
                     book.setName(bookSnapshot.child("name").getValue(String.class));
                     book.setUploadDate(bookSnapshot.child("uploadDate").getValue(Long.class));
                     book.setCoverURL(bookSnapshot.child("coverURL").getValue(String.class));
-                    if (book != null){
-                        books.add(book);
-                    }
+                    books.add(book);
                 }
                 listener.onBooksLoaded(books);
             }

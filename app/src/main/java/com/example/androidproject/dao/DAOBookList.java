@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import com.example.androidproject.entity.Book;
 import com.example.androidproject.entity.BookList;
 import com.example.androidproject.entity.PlayList;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +24,9 @@ import java.util.Objects;
 
 public class DAOBookList {
     private final DatabaseReference mData = FirebaseDatabase.getInstance().getReference();
+
+
+
     public interface BookFetchCallback {
         void onBooksFetched(List<Book> books);
     }
@@ -48,9 +53,14 @@ public class DAOBookList {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             for (DataSnapshot bookSnapshot : dataSnapshot.getChildren()) {
-                                Book book = bookSnapshot.getValue(Book.class);
-                                if (book != null && bookIDList.contains(bookSnapshot.getKey())) {
+                                Book book = new Book();
+                                if (bookIDList.contains(bookSnapshot.getKey())) {
                                     book.setBookID(bookSnapshot.getKey());
+                                    book.setPrice(bookSnapshot.child("price").getValue(Double.class));
+                                    book.setAuthorID(bookSnapshot.child("authorID").getValue(String.class));
+                                    book.setName(bookSnapshot.child("name").getValue(String.class));
+                                    book.setUploadDate(bookSnapshot.child("uploadDate").getValue(Long.class));
+                                    book.setCoverURL(bookSnapshot.child("coverURL").getValue(String.class));
                                     books.add(book);
                                 }
                                 Log.d("Book List", "book retrieved: " + bookSnapshot.getKey());
@@ -103,6 +113,48 @@ public class DAOBookList {
                 }
             });
         }).start();
+    }
+    public void addBookList(BookList bookList) {
+        mData.child("Book List").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                boolean bookListExists = false;
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    BookList snapshot = childSnapshot.getValue(BookList.class);
+                    Log.d(snapshot.getBookID(), "BL "+ snapshot.getListID());
+                    if (Objects.equals(snapshot.getBookID(), bookList.getBookID()) && snapshot.getListID() == bookList.getListID()) {
+                        bookListExists = true;
+                        break;
+                    }
+                }
+                // If no matching BookList was found, add the new BookList
+                if (!bookListExists) {
+                    // Use push() to generate a unique key for the new book list
+                    DatabaseReference newBookListRef = mData.child("Book List").push();
+                    // Set the value of the new book list at the generated key
+                    newBookListRef.setValue(bookList)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    // Book list added successfully
+                                    Log.d(bookList.getBookID(), "New book list added!"+ bookList.getListID());
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    // Handle failure
+                                }
+                            });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle cancellation
+                Log.e("cancel","Error retrieving book lists: " + databaseError.getMessage());
+            }
+        });
     }
     public interface DeleteCallback {
         void onDeleteSuccess();

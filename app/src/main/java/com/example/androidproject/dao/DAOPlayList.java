@@ -165,6 +165,30 @@ public class DAOPlayList {
             });
         }).start();
     }
+    public void getAllListByAccountId(int accountID, final PlayListFetchCallback callback) {
+        new Thread(() -> {
+            final List<PlayList> playlistList = new ArrayList<>();
+            mData.child("List").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot listSnapshot : dataSnapshot.getChildren()) {
+                        PlayList playlist = listSnapshot.getValue(PlayList.class);
+                        if (playlist != null && playlist.getAccountID() == accountID) {
+                            playlistList.add(playlist);
+                        }
+                    }
+                    // Log the total number of playlists retrieved
+                    Log.d("Playlist", "Total playlists retrieved: " + playlistList.size());
+                    new Handler(Looper.getMainLooper()).post(() -> callback.onPlayListsFetched(playlistList));
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Handle onCancelled event if needed
+                    Log.e("Playlist", "Error retrieving playlists: " + databaseError.getMessage());
+                }
+            });
+        }).start();
+    }
     public static void addPlayList(int id, PlayList playList) {
         mData.child("List").child(String.valueOf(id)).setValue(null);
         mData.child("List").child(String.valueOf(id)).setValue(playList);

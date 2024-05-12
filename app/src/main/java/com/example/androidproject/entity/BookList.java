@@ -2,12 +2,12 @@ package com.example.androidproject.entity;
 
 public class BookList {
     private int playlistID;
-    private int bookID;
+    private String bookID;
     public BookList() {
 
     }
 
-    public BookList(int playlistID, int bookID) {
+    public BookList(int playlistID, String bookID) {
         this.playlistID = playlistID;
         this.bookID = bookID;
     }
@@ -20,11 +20,11 @@ public class BookList {
         this.playlistID = listID;
     }
 
-    public int getBookID() {
+    public String getBookID() {
         return bookID;
     }
 
-    public void setBookID(int bookID) {
+    public void setBookID(String bookID) {
         this.bookID = bookID;
     }
 }

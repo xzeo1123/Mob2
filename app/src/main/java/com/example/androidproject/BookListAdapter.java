@@ -80,6 +80,19 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.Bookli
                 holder.showDeleteConfirmationDialog(book.getBookID(), position);
             }
         });
+        holder.buttonOpen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create Intent to navigate to the new activity
+                Intent intent = new Intent(mContext, DetailMgaActivity.class);
+
+                // Put the list ID as an extra in the Intent
+                intent.putExtra("BOOK_ID", book.getBookID());
+
+                // Start the new activity with the Intent
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -93,6 +106,7 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.Bookli
         TextView textViewAuthor;
         TextView textViewPrice;
         Button buttonDelete;
+        Button buttonOpen;
 
 
         public BooklistViewHolder(@NonNull View itemView) {
@@ -102,6 +116,7 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.Bookli
             textViewAuthor = itemView.findViewById(R.id.textViewAuthor);
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
             buttonDelete = itemView.findViewById(R.id.buttonDelete);
+            buttonOpen = itemView.findViewById(R.id.buttonOpen);
         }
 
         private void showDeleteConfirmationDialog(String bookID, int position) {

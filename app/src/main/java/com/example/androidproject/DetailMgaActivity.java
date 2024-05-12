@@ -3,6 +3,7 @@ package com.example.androidproject;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,14 +16,36 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.androidproject.dao.AccountDAO;
+import com.example.androidproject.dao.DAOBookList;
 import com.example.androidproject.dao.DAODetailManga;
+import com.example.androidproject.dao.DAOPlayList;
+import com.example.androidproject.entity.Account;
+import com.example.androidproject.entity.BookList;
+import com.example.androidproject.entity.PlayList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DetailMgaActivity extends AppCompatActivity {
     private TextView txtName, txtAuthor, txtCategory, txtPrice, txtDescription;
     private Button btnRead, btnAdd, btnComment, btnChapter;
     private ImageView imgView;
+    private final List<Integer> idList = new ArrayList<>();
+    private int idReadingList = 0;
+    private int idFavorList = 0;
+    private final List<PlayList> playlists = new ArrayList<>();
     private Context mContext;
     private DAODetailManga daoDetailManga = new DAODetailManga();
+    private DAOBookList daoBookList = new DAOBookList();
+    private DAOPlayList daoPlayList = new DAOPlayList();
+    private AccountDAO accountDAO;
+    boolean isDataLoaded = false;
+    private int accountID;
+
+    public DetailMgaActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +57,11 @@ public class DetailMgaActivity extends AppCompatActivity {
             return insets;
         });
 
-        mappingComponent();
 
+
+        mappingComponent();
+        getSQLiteData();
+        getAllData();
         RenderData();
 
         btnRead.setOnClickListener(v -> goToChapter());
@@ -48,6 +74,7 @@ public class DetailMgaActivity extends AppCompatActivity {
     }
 
     private void mappingComponent() {
+        mContext = this;
         txtName = findViewById(R.id.txtName);
         txtAuthor = findViewById(R.id.txtAuthor);
         txtCategory = findViewById(R.id.txtCategory);
@@ -61,7 +88,6 @@ public class DetailMgaActivity extends AppCompatActivity {
 
         imgView = findViewById(R.id.imgViewCover);
 
-        mContext = this;
     }
 
     private void RenderData() {
@@ -90,28 +116,71 @@ public class DetailMgaActivity extends AppCompatActivity {
     }
 
     private String getParseData() {
-//        try {
-//            Intent intent = getIntent();
-//            if (intent != null) {
-//                return intent.getStringExtra("BookId");
-//            }
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Intent intent = getIntent();
+            if (intent != null) {
+                return intent.getStringExtra("BOOK_ID");
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
         return "-NxSlK3ynwldt7Wp3ihX";
     }
 
     private void goToChapter() {
+        addReading();
         Intent intent = new Intent(DetailMgaActivity.this, ChapterActivity.class);
         intent.putExtra("BookId", getParseData());
         startActivity(intent);
     }
 
     private void addFavor() {
+        getAllData();
+        if (isDataLoaded) {
+            BookList favorBL = new BookList(idFavorList, getParseData());
+            daoBookList.addBookList(favorBL);
+        }
+    }
+    private void addReading() {
+        getAllData();
+        if (isDataLoaded) {
+            BookList favorR = new BookList(idReadingList, getParseData());
+            daoBookList.addBookList(favorR);
+        }
+    }
+    private void getAllData(){
+        daoPlayList.getAllListByAccountId(accountID, playlistList ->  {
+            this.playlists.clear();
+            this.playlists.addAll(playlistList);
+        });
+        for (PlayList list : playlists) {
+            if (idFavorList == 0 || idReadingList == 0) {
+                Log.d("List", "" + list.getName());
+                if (list.getName().equals("Favorite")) {
+                    idFavorList = list.getListID();
+                } else if (list.getName().equals("Reading")) {
+                    idReadingList = list.getListID();
+                }
+            } else {
+                isDataLoaded = true;
+                break;
+            }
+        }
 
     }
-
+    private void getSQLiteData() {
+        if (mContext == null) {
+            Log.d("a", "mContext is null");
+            return;
+        }
+        accountDAO = new AccountDAO(mContext);
+        boolean check = accountDAO.checkExistAccount();
+        if (check) {
+            Account account = accountDAO.getAccount();
+            accountID = AccountDAO.getID();
+        }
+    }
     private void goToComment() {
         Intent intent = new Intent(DetailMgaActivity.this, WriteCmtActivity.class);
         intent.putExtra("BookId", getParseData());

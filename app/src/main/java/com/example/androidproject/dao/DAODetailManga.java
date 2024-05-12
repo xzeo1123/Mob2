@@ -24,8 +24,7 @@ public class DAODetailManga {
                 DetailBook detailBook = new DetailBook();
                 detailBook.setName((String) dataSnapshot.child("name").getValue());
                 detailBook.setAuthorId((String) dataSnapshot.child("authorID").getValue());
-                double Price = (double) dataSnapshot.child("price").getValue();
-                detailBook.setPrice(Price);
+                detailBook.setPrice(Double.parseDouble(String.valueOf(dataSnapshot.child("price").getValue())));
                 detailBook.setBookId(bookId);
                 detailBook.setCoverURL((String) dataSnapshot.child("coverURL").getValue());
                 callback.onDetailBookFetched(detailBook);
