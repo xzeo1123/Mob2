@@ -63,6 +63,7 @@
                 tools:layout_editor_absoluteY="18dp" />
 
             <Button
+                android:id="@+id/buttonChapter"
                 android:layout_width="194dp"
                 android:layout_height="wrap_content"
                 android:background="#4D4F5E"
@@ -103,9 +104,9 @@
 
     <Button
         android:id="@+id/buttonComment"
-        android:layout_width="136dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="+ Write a Comment"
+        android:text="Write a Comment"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -254,7 +255,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imgViewCover"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202"
+        app:layout_constraintVertical_bias="0.183"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
@@ -272,7 +273,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgViewCover"
         app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
@@ -304,7 +305,7 @@
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toEndOf="@+id/imgViewCover"
         app:layout_constraintTop_toBottomOf="@+id/txtCategory"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
