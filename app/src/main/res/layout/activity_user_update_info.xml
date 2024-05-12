@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".UserUpdateInfoActivity">
 
-    <ImageView
+<ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,7 +38,7 @@
         android:id="@+id/textView"
         android:layout_width="200dp"
         android:layout_height="38dp"
-        android:text="Update Info"
+        android:text="Back to user"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,128 +50,178 @@
         tools:ignore="HardcodedText" />
 
     <LinearLayout
-        android:layout_width="419dp"
-        android:layout_height="653dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="88dp"
-        android:orientation="vertical"
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:padding="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.143"
         tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="Email: "
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
-
-            <EditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:hint="Enter your email"
-                android:inputType="textEmailAddress"
-                tools:ignore="Autofill,HardcodedText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:text="Password: "
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
-
-            <EditText
-                android:id="@+id/editTextPassword"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:hint="Enter your password"
-                android:inputType="textPassword"
-                tools:ignore="Autofill,HardcodedText,InefficientWeight" />
-
-        </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/checkBoxStorePassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Remember Password"
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Full Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
             tools:ignore="HardcodedText" />
 
-        <Button
-            android:id="@+id/buttonLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Login"
-            tools:ignore="HardcodedText" />
+        <EditText
+            android:id="@+id/editTextFullName"
+            android:layout_width="315dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="Enter your full name"
+            android:inputType="textPersonName"
+            tools:ignore="Autofill,HardcodedText,InefficientWeight" />
+    </LinearLayout>
 
-        <Button
-            android:id="@+id/buttonSignup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Signup"
-            tools:ignore="HardcodedText" />
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="407dp"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/buttonConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Confirm Code"
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="DoB"
+            android:textSize="18sp"
+            android:textStyle="bold"
             tools:ignore="HardcodedText" />
-
-        <Button
-            android:id="@+id/buttonForget"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Forget Password ?"
-            tools:ignore="HardcodedText" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="8dp">
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center_horizontal"
+         android:orientation="vertical"
+         android:padding="8dp">
 
-            <DatePicker
-                android:id="@+id/datePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:calendarViewShown="false"
-                android:datePickerMode="spinner" />
+         <DatePicker
+             android:id="@+id/datePicker"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:calendarViewShown="false"
+             android:datePickerMode="spinner" />
 
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="407dp"
+        android:layout_height="97dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Money"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textViewMoney"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:text="Input money goes here"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/buttonBuy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buy"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="VIP"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textViewVip"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:text="Input VIP goes here"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/buttonActivate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activate"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Update"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10"
+        app:layout_constraintVertical_bias="0.1"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,7 +44,7 @@ public class DAOSignup {
     }
 
     public interface idFetchCallback {
-        void onIDsFetched(List<String> codeList);
+        void onIDsFetched(List<String> idList);
     }
 
     public void getIDList(final idFetchCallback callback) {

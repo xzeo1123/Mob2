@@ -125,7 +125,6 @@ public class DAOBook {
         chapter.setUploadDate(System.currentTimeMillis());
         // Set the chapter under the "Chapters" node with the generated key
         chaptersRef.child(chapterKey).setValue(chapter);
-
     }
 
     public void uploadImagesAndSaveToDatabase(List<Uri> imageUris, String bookName, String bookId, Chapter chapter) {

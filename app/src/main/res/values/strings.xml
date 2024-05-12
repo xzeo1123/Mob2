@@ -8,4 +8,6 @@
     <string name="adminaccountDob">Date of Birth: </string>
     <string name="adminaccountEmail">Email: </string>
     <string name="adminaccountRole">Role: </string>
+    <string name="Delete">Xoá</string>
+    <string name="Open">Mở</string>
 </resources>

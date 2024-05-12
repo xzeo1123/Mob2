@@ -34,7 +34,7 @@
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
-        android:id="@+id/nameUser"
+        android:id="@+id/textViewUserName"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:text="Nguyen Van A"
@@ -271,6 +271,7 @@
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
+        android:id="@+id/textViewEditProfile"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginEnd="252dp"
@@ -298,7 +299,7 @@
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/textViewChangePassword"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:text="Change Password"

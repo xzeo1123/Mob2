@@ -17,7 +17,11 @@
         android:theme="@style/Theme.AndroidProject"
         tools:targetApi="31">
         <activity
+            android:name=".UserPaymentActivity"
             android:name=".AdminBookDetail"
+            android:exported="false" />
+        <activity
+            android:name=".AdminAAccDetail"
             android:exported="false" />
         <activity
             android:name=".AdminAAccDetail"
@@ -74,6 +78,9 @@
             android:name=".BCReadingActivity"
             android:exported="true" />
         <activity
+            android:name=".BCBooksActivity"
+            android:exported="true" />
+        <activity
             android:name=".BCFavorActivity"
             android:exported="true" />
         <activity
@@ -102,7 +109,13 @@
             android:exported="true" />
         <activity
             android:name=".UserLoginActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
