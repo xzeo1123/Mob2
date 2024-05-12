@@ -1,8 +1,9 @@
 package com.example.androidproject.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Chapter {
+public class Chapter implements Serializable {
     private List<String> Images;
     private String Name;
     private long UploadDate;

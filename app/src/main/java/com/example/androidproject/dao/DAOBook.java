@@ -34,6 +34,10 @@ public class DAOBook {
         void onBooksLoaded(ArrayList<Book> books);
         void onError(String errorMessage);
     }
+    public interface ChapterFetchListener {
+        void onChaptersFetched(ArrayList<Chapter> chapters);
+        void onFetchError(String e);
+    }
     //Get a book
     public ArrayList<Book> getBook(GetBookDataListener listener){
         ArrayList<Book> books = new ArrayList<>();
@@ -61,6 +65,33 @@ public class DAOBook {
         });
         return books;
     }
+    //Get chapters in a book
+    public ArrayList<Chapter> getChapter(String bookKey, ChapterFetchListener listener) {
+        DatabaseReference chaptersRef = FirebaseDatabase.getInstance().getReference()
+                .child("Book").child(bookKey).child("Chapter");
+
+        final ArrayList<Chapter> chapters = new ArrayList<>();
+
+        chaptersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot chapterSnapshot : dataSnapshot.getChildren()) {
+                    Chapter chapter = chapterSnapshot.getValue(Chapter.class);
+                    chapters.add(chapter);
+                }
+                listener.onChaptersFetched(chapters);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                listener.onFetchError(databaseError.getMessage());
+            }
+        });
+
+        return chapters;
+    }
+
+
     //Add a book
     public Task<String> addBook(Book bookData, File imageFile) {
         // Get a reference to the Firebase Storage root

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -70,8 +71,16 @@ public class DetailMgaActivity extends AppCompatActivity {
         btnComment.setOnClickListener(v -> goToComment());
 
         btnChapter.setOnClickListener(v -> goToChapter());
-    }
 
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(view -> {
+            backToHome();
+        });
+    }
+    public void backToHome(){
+        Intent intent = new Intent(DetailMgaActivity.this, UserHomeActivity.class);
+        startActivity(intent);
+    }
     private void mappingComponent() {
         mContext = this;
         txtName = findViewById(R.id.txtName);
@@ -127,6 +136,7 @@ public class DetailMgaActivity extends AppCompatActivity {
         try {
             Intent intent = getIntent();
             if (intent != null) {
+                Log.i("aaaaaaaaaaaaaaaaaaaaaaaa", intent.getStringExtra("BOOK_ID"));
                 return intent.getStringExtra("BOOK_ID");
             }
         }

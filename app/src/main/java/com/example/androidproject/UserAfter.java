@@ -3,6 +3,7 @@ package com.example.androidproject;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -35,13 +36,20 @@ public class UserAfter extends AppCompatActivity {
         txtEditProfile.setOnClickListener(v -> goToUpdateInfo());
 
         txtChangePass.setOnClickListener(v -> goToChangePass());
-    }
 
+        ImageButton btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(view -> {
+            backToHome();
+        });
+    }
+    public void backToHome(){
+        Intent intent = new Intent(UserAfter.this, UserHomeActivity.class);
+        startActivity(intent);
+    }
     private void mappingComponents() {
         txtEditProfile = findViewById(R.id.textViewEditProfile);
         txtChangePass = findViewById(R.id.textViewChangePassword);
         txtUserName = findViewById(R.id.textViewUserName);
-
         mContext = this;
     }
 
