@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BCListActivity">
+    tools:context=".BCListActivity"
+    tools:ignore="ExtraText">
 
     <ImageView
         android:id="@+id/background_image"
@@ -84,7 +85,7 @@
                 tools:layout_editor_absoluteY="18dp" />
 
             <Button
-                android:id="@+id/list"
+                android:id="@+id/playList"
                 android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:background="#4D4F5E"
@@ -98,120 +99,34 @@
     </HorizontalScrollView>
 
     <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="392dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="MissingConstraints">
-
-        <ImageButton
-            android:id="@+id/imageButtonAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:importantForAccessibility="no"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/add"
-            tools:ignore="InefficientWeight" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="34dp"
-            android:text="Add a new list"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            android:id="@+id/overflow_button"
-            android:layout_width="73dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="&#8942;"
-            android:textSize="24sp"
-            tools:ignore="HardcodedText" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="392dp"
-        android:layout_height="166dp"
+        android:layout_height="0dp"
         android:orientation="horizontal"
         android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView2"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintBottom_toTopOf="@id/addNewButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217"
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView2"
+        app:layout_constraintVertical_bias="0.25"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/imagePurch"
-            android:layout_width="149dp"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg1_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="34dp"
-            android:text="Lists of Purchased \n6 stories"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            android:layout_width="73dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="&#8942;"
-            android:textSize="24sp"
-            tools:ignore="DuplicateIds,HardcodedText" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPlaylists"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="392dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        android:padding="2dp"
+    <!-- Guideline to represent the bottom of the screen -->
+    <Button
+        android:id="@+id/addNewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New List"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:layout_width="149dp"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg2_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="168dp"
-            android:layout_height="34dp"
-            android:text="Lists 1 \n6 stories"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-        <Button
-            android:layout_width="73dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="&#8942;"
-            android:textSize="24sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,9 +36,9 @@
     <!-- account management -->
 
     <TextView
+        android:id="@+id/txtUserName"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
-        android:text="Hello, Admin1!"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,6 +49,9 @@
         app:layout_constraintVertical_bias="0.17"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
+
+    <!-- manga management -->
+
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
@@ -58,24 +61,21 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.234"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
-
-    <!-- manga management -->
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="26dp"
-        android:layout_height="20dp"
+    <Button
+        android:id="@+id/btnToUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="User"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.275"
@@ -90,7 +90,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274"
+        app:layout_constraintVertical_bias="0.285"
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
@@ -100,25 +100,27 @@
         android:src="@drawable/admin_qly"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315"
+        app:layout_constraintVertical_bias="0.286"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
+    <Button
+        android:id="@+id/btnToAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Admin"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315"
+        app:layout_constraintVertical_bias="0.275"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+    <!-- account -->
 
     <TextView
         android:id="@+id/textView12"
@@ -136,18 +138,18 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="65dp"
-        android:layout_height="20dp"
+    <Button
+        android:id="@+id/btnNewManga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="New Manga"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413"
+        app:layout_constraintVertical_bias="0.433"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <ImageView
@@ -159,10 +161,8 @@
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413"
+        app:layout_constraintVertical_bias="0.433"
         tools:ignore="ContentDescription,MissingConstraints" />
-
-    <!-- account -->
 
     <ImageView
         android:layout_width="20dp"
@@ -170,24 +170,24 @@
         android:src="@drawable/posted"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451"
+        app:layout_constraintVertical_bias="0.433"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView16"
+    <Button
+        android:id="@+id/btnPostedManga"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:text="Posted"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451"
+        app:layout_constraintVertical_bias="0.433"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <TextView
@@ -201,18 +201,18 @@
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
+        app:layout_constraintVertical_bias="0.499"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView13"
+    <Button
+        android:id="@+id/btnChangePassword"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:text="Change password"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.556"
@@ -224,24 +224,24 @@
         android:src="@drawable/logout_admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599"
+        app:layout_constraintVertical_bias="0.555"
         tools:ignore="ContentDescription,MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView14"
+    <Button
+        android:id="@+id/btnLogOut"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:text="Logout"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599"
+        app:layout_constraintVertical_bias="0.556"
         tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
 
     <ImageView

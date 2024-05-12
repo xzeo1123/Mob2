@@ -10,7 +10,7 @@ import com.example.androidproject.entity.Account;
 import com.example.androidproject.sqlitedb.CreateDatabase;
 
 public class AccountDAO {
-    SQLiteDatabase db;
+    static SQLiteDatabase db;
 
     public AccountDAO(Context context) {
         CreateDatabase createDatabase = new CreateDatabase(context);
@@ -69,7 +69,7 @@ public class AccountDAO {
         }
     }
 
-    public int getID() {
+    public static int getID() {
         String query = "SELECT accountID FROM " + CreateDatabase.TB_ACCOUNT;
         Cursor cursor = db.rawQuery(query, null);
 

@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">AndroidProject</string>
     <string name="login">LOGIN</string>
+
+<!--  Account admin label properties  -->
+    <string name="adminaccountId">Account ID: </string>
+    <string name="adminaccountDisplayname">Display Name: </string>
+    <string name="adminaccountDob">Date of Birth: </string>
+    <string name="adminaccountEmail">Email: </string>
+    <string name="adminaccountRole">Role: </string>
+    <string name="Delete">Xoá</string>
+    <string name="Open">Mở</string>
 </resources>

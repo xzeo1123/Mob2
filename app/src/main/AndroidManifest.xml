@@ -20,6 +20,12 @@
             android:name=".UserPaymentActivity"
             android:exported="false" />
         <activity
+            android:name=".AdminAAccDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UpdatePasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserUpdateInfoActivity"
             android:exported="true" />
         <activity
@@ -59,6 +65,9 @@
             android:name=".BCReadingActivity"
             android:exported="true" />
         <activity
+            android:name=".BCBooksActivity"
+            android:exported="true" />
+        <activity
             android:name=".BCFavorActivity"
             android:exported="true" />
         <activity
@@ -84,6 +93,9 @@
             android:exported="true" />
         <activity
             android:name=".UserRegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AdminAccountInfo"
             android:exported="true" />
         <activity
             android:name=".UserLoginActivity"

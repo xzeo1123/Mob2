@@ -17,19 +17,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidproject.dao.AccountDAO;
-import com.example.androidproject.dao.DAOBook;
 import com.example.androidproject.dao.DAOBookList;
 import com.example.androidproject.dao.DAOPlayList;
 import com.example.androidproject.entity.Account;
 import com.example.androidproject.entity.Book;
-import com.example.androidproject.entity.BookList;
 import com.example.androidproject.entity.PlayList;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BCFavorActivity extends AppCompatActivity {
+public class BCBooksActivity extends AppCompatActivity {
 
 
 
@@ -101,38 +98,31 @@ public class BCFavorActivity extends AppCompatActivity {
         }
     }
     private void getAllData(){
-        daoPlayList.getFavorListByAccountId(accountID, playlistList ->  {
-            if (!playlistList.isEmpty()) {
-                this.favorList = playlistList.get(0);
-                idList = favorList.getListID();
-                Log.d("favor", "List" + idList);
-                // Call daoBookList.getBookListByListID only after readingList is fetched
-                daoBookList.getBookListByListID(favorList.getListID(), books ->  {
-                    this.books.clear();
-                    this.books.addAll(books);
-                    isDataLoaded = true;
-                    setAdapter();
-                });
-            } else {
-                Log.d("readinglist", "Reading list is empty");
-                // Handle the case where the reading list is empty
-            }
+        idList = getIntent().getIntExtra("LIST_ID", -1);
+        Log.d("favor", "List" + idList);
+        // Call daoBookList.getBookListByListID only after readingList is fetched
+        daoBookList.getBookListByListID(idList, books ->  {
+            this.books.clear();
+            this.books.addAll(books);
+            isDataLoaded = true;
+            setAdapter();
         });
     }
 
     private void goToFavor() {
-        restartActivity();
+        Intent intent = new Intent(BCBooksActivity.this, BCFavorActivity.class);
+        startActivity(intent);
     }
     private void goToList() {
-        Intent intent = new Intent(BCFavorActivity.this, BCListActivity.class);
+        Intent intent = new Intent(BCBooksActivity.this, BCListActivity.class);
         startActivity(intent);
     }
     private void goToHome() {
-        Intent intent = new Intent(BCFavorActivity.this, UserHomeActivity.class);
+        Intent intent = new Intent(BCBooksActivity.this, UserHomeActivity.class);
         startActivity(intent);
     }
     private void goToReading() {
-        Intent intent = new Intent(BCFavorActivity.this, BCReadingActivity.class);
+        Intent intent = new Intent(BCBooksActivity.this, BCReadingActivity.class);
         startActivity(intent);
     }
     private void restartActivity() {

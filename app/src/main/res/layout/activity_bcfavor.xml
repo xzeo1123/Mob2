@@ -5,30 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BCFavorActivity">
+    tools:context=".BCListActivity"
+    tools:ignore="ExtraText">
 
-   <ImageView
+    <ImageView
         android:id="@+id/background_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/bg_user"
         android:scaleType="centerCrop"
         tools:ignore="ContentDescription" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="134dp"
-        android:layout_height="38dp"
-        android:text="Bookcase"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036"
-        tools:ignore="HardcodedText" />
 
     <ImageButton
         android:id="@+id/buttonBack"
@@ -42,8 +28,23 @@
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036"
+        app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/back_button" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="38dp"
+        android:text="Bookcase"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:ignore="HardcodedText" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
@@ -51,10 +52,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111"
+        app:layout_constraintVertical_bias="0.093"
         tools:ignore="MissingConstraints">
 
 
@@ -80,17 +81,17 @@
                 android:background="#4D4F5E"
                 android:text="Favorite"
                 android:textSize="12sp"
-                android:textStyle="bold"
                 tools:ignore="ButtonStyle, HardcodedText"
                 tools:layout_editor_absoluteY="18dp" />
 
             <Button
-                android:id="@+id/list"
+                android:id="@+id/playList"
                 android:layout_width="131dp"
                 android:layout_height="wrap_content"
                 android:background="#4D4F5E"
                 android:text="List"
                 android:textSize="12sp"
+                android:textStyle="bold"
                 tools:ignore="ButtonStyle, HardcodedText"
                 tools:layout_editor_absoluteY="18dp" />
 
@@ -98,115 +99,32 @@
     </HorizontalScrollView>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:id="@+id/linearLayout6"
+        android:layout_width="392dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.608"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView2"
+        app:layout_constraintVertical_bias="0.25"
+        tools:ignore="MissingConstraints">
 
-        <ImageView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBooklists"
             android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg3_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Doraemon"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
+            android:layout_height="match_parent"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg4_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Shin"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg2_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Conan"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        tools:ignore="MissingConstraints,UseCompoundDrawables">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/mg1_1"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_width="109dp"
-            android:layout_height="18dp"
-            android:text="Naruto"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_bottom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
